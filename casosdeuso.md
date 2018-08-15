@@ -16,52 +16,53 @@
 
 **Atores:**  Usuário
 
-**Pré-condições:**
+**Pré-condições:**  O usuário deverá entrar com seus dados pessoais.
 
 **Fluxo principal:**
-1.
+1. o usuário deverá fornecer o e-mail;
+2. seu nome;
+3. telefone;
+4. melhor amigo(opcional);
+5. criar uma senha.
    
 # CDU 02 - Login
 
 **Atores:**  Usuário e Administrador
 
-**Pré-condições:**
+**Pré-condições:** Possuir um cadastro.
 
 **Fluxo principal:**
-1.
+1. entrar com e-mail e senha.
 
 # CDU 03 - Registro de Humor
 
 **Atores:**  Usuário
 
-**Pré-condições:**
+**Pré-condições:** Possuir um cadastro, estar logado e optar pela função de registro de humor.
 
 **Fluxo principal:**
-1.
+1. selecionar o humor diário através de um emoji.
 
-# CDU 04 - Verificação de autoestima
+# CDU 04 - Verificação de frases de autoestima
 
 **Atores:**  Usuário
 
-**Pré-condições:**
-
-**Fluxo principal:**
-1.
+**Pré-condições:** Possuir um cadastro, estar logado e optar pela função de autoestima.
 
 # CDU 05- Registro no Diário
 
 **Atores:**  Usuário
 
-**Pré-condições:**
+**Pré-condições:** Possuir um cadastro, estar logado e optar pela função diário.
 
 **Fluxo principal:**
-1.
+1. registrar no diário quaisquer informação que julgue necessário.
 
 # CDU 06 - Visualização de frases/vídeos/imagens
 
 **Atores:**  Usuário
 
-**Pré-condições:**
+**Pré-condições:** Nenhuma pré-condição porque esses recursos estarão disponiveis na página inicial.
 
 **Fluxo principal:**
 1.
