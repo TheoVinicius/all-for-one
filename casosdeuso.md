@@ -41,7 +41,8 @@
 **Pré-condições:** Possuir um cadastro, estar logado e optar pela função de registro de humor.
 
 **Fluxo principal:**
-1. selecionar o humor diário através de um emoji.
+1. entrar na guia humor;
+2. selecionar o humor diário através de um emoji.
 
 # CDU 04 - Verificação de frases de autoestima
 
@@ -71,25 +72,25 @@
 
 **Atores:**  Administrador
 
-**Pré-condições:**
+**Pré-condições:** Estar no site
 
-**Fluxo principal:**
-1.
 
 # CDU 08 - Criação de Planilhas
 
 **Atores:**  Administrador
 
-**Pré-condições:**
+**Pré-condições:** O usúario deve fornecer os dados necessários.
 
 **Fluxo principal:**
-1.
+1.criar uma planilha com os dados fornecidos, em forma de calendário;
+2. disponibilizar ao usuário a visualização da planilha.
 
 # CDU 09 - Gerenciamento de humor
 
 **Atores:**  Administrador
 
-**Pré-condições:**
+**Pré-condições:**  O usúario deve fornecer os dados necessários.
 
 **Fluxo principal:**
-1.
+1.entrar com o login;
+2.verificar os dados que foram fornecidos diariamente pelo usuário;
