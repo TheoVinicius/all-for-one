@@ -2,7 +2,7 @@
 
 ## Sumário
 
-- [CDU 01 - Cadastrar](#cdu-01---cadastramento)
+- [CDU 01 - Cadastramento](#cdu-01---cadastramento)
 - [CDU 02 - Login](#cdu-02---login)
 - [CDU 03 - Registro de Humor](#cdu-03---registro--de--humor)
 - [CDU 04 - Registro no Diário](#cdu-04---registro--no--diario)
