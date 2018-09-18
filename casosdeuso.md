@@ -52,17 +52,11 @@
 
 **Atores:**  Administrador
 
-**Pré-condições:**
-
-**Fluxo principal:**
-
-
 # CDU 06 - Visualização do conteúdo diário
 
 **Atores:**  Usuário e Visitante
 
 **Pré-condições:** Nenhuma pré-condição porque esses recursos estarão disponiveis na página inicial.
 
-**Fluxo principal:**
-1.
+
 
