@@ -105,15 +105,15 @@ else if (strlen($amigo) < 3 || 35 < strlen($amigo))
 }
 
 if (empty($erros) == false)
-(
+{
 	foreach($erros as $erro)
 	{
 		echo $erro;
 	}
-)
+}
 else
-(
-//  $bd = new PDO('mysql:host=localhost;dbname=nome do banco;charset=utf8', 'nome do usuario', 'senha');
+{
+ $bd = new PDO('mysql:host=localhost;dbname=tcc_jambd;charset=utf8', 'tcc_jambd', 'jambdtcc');
 
   $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -131,5 +131,5 @@ else
  $insert->bindValue(':amigo', $request['amigo']);
 
  $bd -> exec($insert);
-)
+}
 ?>
