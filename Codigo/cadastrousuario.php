@@ -1,6 +1,5 @@
 <?php
 
-REQUIRE_ONCE('<instaCPII\Tabelas\TabelaUsuarios.php>');
 $erros = [];
 
 $request = array_map('trim', $_REQUEST);
@@ -86,9 +85,9 @@ else
 	}
 }
 
-$visibilizadePublicações = $request['sexo'];
+$sexo = $request['sexo'];
 
-if ($visibilidadePublicações == false)
+if ($sexo =! 1 ||$sexo =! 2 || $sexo =! 3 )
 {
 	$erros[]= "O campo sexo foi deixado em branco ou é inválido";
 }
@@ -118,18 +117,18 @@ else
   $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
  $insert = $bd->prepare(
-   'INSERT INTO Contatos (nomePróprio, sobrenome, email, senha, dataNasc, sexo, amigo)
-    VALUES (:nomeProprio, :sobrenome, :email, :senha, :dataNasc, :sexo, :amigo)'
+   'INSERT INTO usuario (nomePróprio, sobrenome, email, senha, datNasc, sexo, amigo)
+    VALUES (:nomeProprio, :sobrenome, :email, :senha, :datNasc, :sexo, :amigo)'
  );
 
  $insert->bindValue(':nomeProprio', $request['nomePróprio']);
  $insert->bindValue(':sobrenome', $request['sobrenome']);
  $insert->bindValue(':senha', $request ['senha']);
- $insert->bindValue(':email',$request['email']);
- $insert->bindValue(':dataNasc', $request['dataNasc']);
- $insert->bindValue('sexo', $request['sexo']);
+ $insert->bindValue(':email', $request['email']);
+ $insert->bindValue(':datNasc', $request['dataNasc']);
+ $insert->bindValue(':sexo', $request['sexo']);
  $insert->bindValue(':amigo', $request['amigo']);
 
- $bd -> exec($insert);
+ $insert -> execute();
 }
 ?>
