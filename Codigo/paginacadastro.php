@@ -120,7 +120,7 @@ a:-webkit-any-link {
    <label>Senha: <input minlength="6" maxlength="12" name="senha" type="password"/></label>
    <label>Confirmar senha:<input minlength="6" maxlength="12" name="confirmaSenha" type="password"/></label> <br/> <br>
    <label>Data de nascimento: <input name="dataNasc" type="date" required/></label> <br/> <br>
-	 <label>Sexo:  <select name="name">
+	 <label>Sexo:  <select name="sexo">
        <option value="" disabled>Selecione</option>
        <option value="1">Feminino</option>
        <option value="2">Masculino</option>
