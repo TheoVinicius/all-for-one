@@ -71,3 +71,6 @@ CREATE TABLE diario
 	primary key(id_diario),
 	foreign key (id_usuario) references usuario(id_usuario)
 );
+
+
+
