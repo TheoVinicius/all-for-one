@@ -86,9 +86,9 @@ else
 	}
 }
 
-$visibilizadePublicações = $request['sexo'];
+$sexo = $request['sexo'];
 
-if ($visibilidadePublicações == false)
+if ($sexo =! 1 || $sexo =! 2 || $sexo =! 3)
 {
 	$erros[]= "O campo sexo foi deixado em branco ou é inválido";
 }
@@ -130,6 +130,6 @@ else
  $insert->bindValue('sexo', $request['sexo']);
  $insert->bindValue(':amigo', $request['amigo']);
 
- $bd -> exec($insert);
+ $insert -> execute();
 }
 ?>
