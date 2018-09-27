@@ -1,6 +1,6 @@
 <?php
 
-REQUIRE_ONCE('<instaCPII\Tabelas\TabelaUsuarios.php>');
+
 $erros = [];
 
 $request = array_map('trim', $_REQUEST);
