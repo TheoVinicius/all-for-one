@@ -3,7 +3,7 @@
 <style>
 
 body {
-	background-image: url('fundos/fundoprinc.jpg');
+	background-image: url('../fundos/fundoprinc.jpg');
 }
 
 #Título {
@@ -15,14 +15,14 @@ body {
 }
 
 #corpo {
-  background-color: #fff7b4;
+  background-color: white;
   margin: auto;
   width: 880px;
   padding: 10px;
 }
 
 #divtítulo {
-  background-color:#ffeb3b;
+  background-color:white;
 }
 
 
@@ -98,7 +98,8 @@ a:-webkit-any-link {
 <body>
 
   <div id="corpo">
-	<div id="cadastrologin"><a href="cadastramento.php">Cadastro</a> <a href="login.php">Login</a></div>
+	<div id="cadastrologin"><a href='paginacadastro.php'>Cadastro</a> <a href='paginlogin.php'>Login</a></div>
+
 
   <div id="divtítulo"> <h1 id='Título'> all for one </h1>
 
