@@ -1,4 +1,5 @@
 # Especificação de casos de uso
+fghfgthfy
 
 ## Sumário
 
@@ -22,7 +23,7 @@
 3. telefone;
 4. melhor amigo(opcional);
 5. criar uma senha.
-   
+
 # CDU 02 - Login
 
 **Atores:**  Usuário e Administrador
@@ -57,6 +58,3 @@
 **Atores:**  Usuário e Visitante
 
 **Pré-condições:** Nenhuma pré-condição porque esses recursos estarão disponiveis na página inicial.
-
-
-

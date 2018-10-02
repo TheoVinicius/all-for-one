@@ -10,4 +10,3 @@ A nossa proposta é criar um Software Web com frases que proporcione motivação
 - Cada dia será possível classificar o seu humor/sentimento de acordo com um emoji;
 
 O usuário receberá notificações ao abrir o seu navegador, de acordo com as funções que utiliza do site.
-
