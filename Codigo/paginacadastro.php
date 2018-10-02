@@ -25,7 +25,7 @@ body {
   background-color:white;
 }
 
-
+/*
 #divmenu {
 	font-size: 25px;
 	margin: auto;
@@ -60,6 +60,7 @@ a:-webkit-any-link {
     cursor: pointer;
     text-decoration: none;
 }
+*/
 
 #cadastrologin {
 	 float: right;
@@ -81,6 +82,8 @@ a:-webkit-any-link {
 }
 
 #formulario {
+		font-family: Freestyle Script;
+		font-size: 25px;
 		padding: 30px;
 		width: auto;
 		display: flex;
@@ -88,9 +91,20 @@ a:-webkit-any-link {
     justify-content: center;
     align-items: center
 }
+
+#corform {
+  width: 800px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+}
 </style>
 <head>
-  <title>Página Inicial</title>
+  <title>Cadastramento</title>
   <meta charset = "utf-8">
 </head>
 
@@ -103,17 +117,19 @@ a:-webkit-any-link {
 
   <div id="divtítulo"> <h1 id='Título'> all for one </h1>
 
-  <div id= "divmenu">
+<!--  <div id= "divmenu">
 	<ul>
-	<li><a href='htmlprincipal.html'>HOME</a></li> |
+	<li><a href='home.html'>HOME</a></li> |
 	<li><a href='diario.html'>DIÁRIO</a></li> |
 	<li><a href='humor.html'>HUMOR</a></li>
 	</ul>
   </div>
+-->
 
   </div>
 
 	<div id="formulario">
+		<div id="corform">
 	<form method="POST" action="cadastrousuario.php">
    <label>Nome: <input minlength="3" maxlength="35" name="nomePróprio" type="text" required/></label>
    <label>Sobrenome: <input minlength="3" maxlength="35" name="sobrenome" type="text" required/></label> <br/> <br>
@@ -130,6 +146,7 @@ a:-webkit-any-link {
 	 <label>Informe o nome de um amigo: <input minlength="3" maxlength="35" name="amigo" type="text" required/> <br/></label> <br><br>
 
 	 <input type="submit" value="Cadastrar"/>
+ </div>
  </div>
 
 </div>

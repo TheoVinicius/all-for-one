@@ -16,7 +16,7 @@ require_once ('conexao.php');
 
 if (empty($select)) = false
 {
-  
+
 }
 
 }

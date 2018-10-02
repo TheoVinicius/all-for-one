@@ -94,7 +94,9 @@ body {
 <body>
 
   <div id="corpo">
+
 	<div id="cadastrologin"><a href='paginacadastro.php'>Cadastro</a> <a href='paginlogin.php'>Login</a></div>
+
 
   <div id="divtítulo"> <h1 id='Título'> all for one </h1>
 

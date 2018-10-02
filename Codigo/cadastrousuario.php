@@ -87,7 +87,9 @@ else
 
 $sexo = $request['sexo'];
 
-if ($sexo =! 1 ||$sexo =! 2 || $sexo =! 3 )
+
+if ($sexo =! 1 || $sexo =! 2 || $sexo =! 3)
+
 {
 	$erros[]= "O campo sexo foi deixado em branco ou é inválido";
 }
