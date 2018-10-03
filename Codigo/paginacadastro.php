@@ -7,11 +7,16 @@ body {
 }
 
 #Título {
-  font-family: Freestyle Script;
-  font-size: 90px;
+  font-family: fantasy;
+  font-size: 70px;
   text-align: center;
   padding: 0px;
   -webkit-margin-after: 15px;
+	border: none;
+	border-radius: 0;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	min-height: 44px;
 }
 
 #corpo {
@@ -82,14 +87,15 @@ a:-webkit-any-link {
 }
 
 #formulario {
-		font-family: Freestyle Script;
+		font-family: fantasy;
 		font-size: 25px;
 		padding: 30px;
 		width: auto;
 		display: flex;
 		flex-direction: row;
     justify-content: center;
-    align-items: center
+    align-items: center;
+		border: 1px solid black;
 }
 
 #corform {
@@ -115,7 +121,7 @@ a:-webkit-any-link {
 	<div id="cadastrologin"><a href='paginacadastro.php'>Cadastro</a> <a href='paginlogin.php'>Login</a></div>
 
 
-  <div id="divtítulo"> <h1 id='Título'> all for one </h1>
+  <div id="divtítulo"> <h1 id='Título'> CADASTRO </h1>
 
 <!--  <div id= "divmenu">
 	<ul>

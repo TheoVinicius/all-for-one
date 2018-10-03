@@ -26,17 +26,22 @@ body {
 }
 
 #Título {
-  font-family: Freestyle Script;
-  font-size: 90px;
+  font-family: fantasy;
+  font-size: 70px;
   text-align: center;
   padding: 0px;
   -webkit-margin-after: 15px;
+	border: none;
+	border-radius: 0;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	min-height: 44px;
 }
 
 #corpo {
   background-color: white;
   margin: auto;
-  width: 880px;
+  width: 400px;
   padding: 10px;
 }
 
@@ -51,7 +56,7 @@ body {
 #cadastrologin a {
 		padding: 4px;
 }
-
+/*
 #cadastrologin a:hover {
     color: #ff9600;
     border-bottom:3px solid #f3b205;
@@ -62,10 +67,10 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
-
+*/
 #formulario {
-    font-family: Freestyle Script;
-    font-size: 25px;
+    font-family: fantasy;
+    font-size: 20px;
 		padding: 30px;
 		width: auto;
 		display: flex;
@@ -83,6 +88,12 @@ body {
   align-items: center;
   background-color: white;
   padding: 10px;
+	border: 1px solid black;
+}
+
+#castrese {
+	color: blue;
+	font-size: 10px;
 }
 </style>
 <head>
@@ -95,10 +106,10 @@ body {
 
   <div id="corpo">
 
-	<div id="cadastrologin"><a href='paginacadastro.php'>Cadastro</a> <a href='paginlogin.php'>Login</a></div>
+<!--	<div id="cadastrologin"><a href='paginacadastro.php'>Cadastro</a> <a href='paginlogin.php'>Login</a></div> -->
 
 
-  <div id="divtítulo"> <h1 id='Título'> all for one </h1>
+  <div id="divtítulo"> <h1 id='Título'> LOGIN </h1>
 
 		<?php if ($erro != null) { ?>
 			<div class"alert alert-warning">
@@ -114,7 +125,9 @@ body {
 				<label> Senha: <input name="senha" type="password" required minlength="6" maxlength="12" placeholder="******"/></label>
         <br><br>
 			<input type="submit" value="Entrar"/>
+				<br><br>	<a href='paginacadastro.php' id='cadastrese'>Cadastre-se</a>
 		</form>
+
   </div>
   </div>
 
