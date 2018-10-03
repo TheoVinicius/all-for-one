@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (array_key_exists('errocadastro', $_SESSION))
+{
+$erros = $_SESSION['errocadastro'];
+unset($_SESSION['errocadastro']);
+}
+else
+{
+	$erros = null;
+}
+?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -28,6 +40,7 @@ body {
 
 #divtítulo {
   background-color:white;
+	margin: 10px;
 }
 
 /*
@@ -88,7 +101,7 @@ a:-webkit-any-link {
 
 #formulario {
 		font-family: fantasy;
-		font-size: 25px;
+		font-size: 20px;
 		padding: 30px;
 		width: auto;
 		display: flex;
@@ -98,7 +111,7 @@ a:-webkit-any-link {
 		border: 1px solid black;
 }
 
-#corform {
+/*#corform {
   width: 800px;
   height: 300px;
   display: flex;
@@ -108,6 +121,12 @@ a:-webkit-any-link {
   background-color: white;
   padding: 10px;
 }
+*/
+ #erromensagem {
+	 border: 1px solid;
+	 background-color: #ffef8a;
+	 padding: 5px; 
+ }
 </style>
 <head>
   <title>Cadastramento</title>
@@ -118,10 +137,20 @@ a:-webkit-any-link {
 <body>
 
   <div id="corpo">
-	<div id="cadastrologin"><a href='paginacadastro.php'>Cadastro</a> <a href='paginlogin.php'>Login</a></div>
 
 
   <div id="divtítulo"> <h1 id='Título'> CADASTRO </h1>
+
+		<?php if ($erros != null) { ?>
+			<div id='erromensagem'>
+					<p>Erro:
+						<?php foreach($erros as $erro)
+						  {
+							echo $erro;
+							} ?>
+					</p>
+			</div>
+		<?php } ?>
 
 <!--  <div id= "divmenu">
 	<ul>
@@ -135,7 +164,6 @@ a:-webkit-any-link {
   </div>
 
 	<div id="formulario">
-		<div id="corform">
 	<form method="POST" action="cadastrousuario.php">
    <label>Nome: <input minlength="3" maxlength="35" name="nomePróprio" type="text" required/></label>
    <label>Sobrenome: <input minlength="3" maxlength="35" name="sobrenome" type="text" required/></label> <br/> <br>
@@ -152,7 +180,6 @@ a:-webkit-any-link {
 	 <label>Informe o nome de um amigo: <input minlength="3" maxlength="35" name="amigo" type="text" required/> <br/></label> <br><br>
 
 	 <input type="submit" value="Cadastrar"/>
- </div>
  </div>
 
 </div>

@@ -78,7 +78,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+/*
 #corform {
   width: 300px;
   height: 200px;
@@ -90,10 +90,16 @@ body {
   padding: 10px;
 	border: 1px solid black;
 }
-
-#castrese {
+*/
+#cadastrese {
 	color: blue;
 	font-size: 10px;
+}
+
+#erromensagem {
+	border: 1px solid;
+	background-color: #ffef8a;
+	padding: 5px;
 }
 </style>
 <head>
@@ -112,7 +118,7 @@ body {
   <div id="divtítulo"> <h1 id='Título'> LOGIN </h1>
 
 		<?php if ($erro != null) { ?>
-			<div class"alert alert-warning">
+			<div id='erromensagem'>
 					<p>Erro: <?= $erro ?> </p>
 			</div>
 		<?php } ?>

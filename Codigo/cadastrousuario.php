@@ -1,4 +1,22 @@
 <?php
+require_once ('conexaobd.php');
+
+function BuscaEmail($email)
+{
+$bd = ConexaoBD();
+
+$select = $bd->prepare(
+	'SELECT email
+	 FROM usuario
+	 WHERE email = :email'
+);
+
+$select->bindValue(':email', $email);
+
+$select -> execute();
+
+return $select -> fetch();
+}
 
 $erros = [];
 
@@ -47,6 +65,12 @@ if ($Email == false)
 	$erros[]= "O campo E-mail foi deixado em branco ou é inválido";
 }
 
+$confirmaEmail = BuscaEmail($Email);
+
+if ($confirmaEmail['email'] == $Email)
+{
+	$erros[]= "O email já foi cadastrado";
+}
 $senha = $request['senha'];
 
 if ($senha == false)
@@ -64,6 +88,8 @@ if ($senha != $confirmasenha)
 {
 	$erros[]="a confirmação de senha deve ser igual a senha";
 }
+
+$senha = password_hash($senha, PASSWORD_DEFAULT);
 
 $dataNasc = $request['dataNasc'];
 
@@ -105,12 +131,11 @@ else if (strlen($amigo) < 3 || 35 < strlen($amigo))
 	$erros[]= "O nome do amigo deve ter de 3 a 35 caracteres";
 }
 
-if (empty($erros) == false)
+if ($erros != null)
 {
-	foreach($erros as $erro)
-	{
-		echo $erro;
-	}
+	session_start();
+	$_SESSION['errocadastro'] = $erros;
+	header('location: paginacadastro.php');
 }
 else
 {

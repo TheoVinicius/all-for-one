@@ -1,40 +1,24 @@
 <?php
 
-require_once ('conexao.php');
+require_once ('conexaobd.php');
 
- function validaemail($email)
+ function BuscaUsuarioPorEmail($email)
 {
  $bd = ConexaoBD();
 
  $select = $bd->prepare(
-   'SELECT email
+   'SELECT senha
     FROM usuario
-    WHERE email = :email)'
+    WHERE email = :email'
  );
 
  $select->bindValue(':email', $email);
 
-if (empty($select)) = false
-{
+ $select -> execute();
+
+ return $select -> fetch();
 
 }
-
-}
-
-function validasenha($senha)
-{
-$bd = ConexaoBD();
-
-$select = $bd->prepare(
-  'SELECT senha
-   FROM usuario
-   WHERE senha = :senha)'
-);
-
-$select->bindValue(':senha', $senha);
-
-}
-
 
 	$erro = null;
 
@@ -56,25 +40,29 @@ $select->bindValue(':senha', $senha);
 	{
 		$erro = "Senha não informada";
 	}
-	else if (array_key_exists($email, /*tabela com dados dos clientes*/) == false)
-	{
-		$erro = "Nenhum usuário cadastrado com o e-mail informado";
-	}
-  else if (password_verify($senha, /*tabela com dados dos clientes*/) == false)
-	{
-		$erro = "A senha está incorreta";
-	}
+	else
+  {
+    $usuario = BuscaUsuarioPorEmail($email);
+    if (empty($usurio) == false)
+    {
+      $erro = "Nenhum usuário cadastrado com o e-mail informado";
+	  }
+    else if (password_verify($senha, $usuario['senha']) == false)
+	  {
+		   $erro = "A senha está incorreta";
+	  }
+  }
 
 	if ($erro != null)
 	{
 		session_start();
 		$_SESSION['erroLogin'] = $erro;
-		header('location: ../paginalogin.php');
+		header('location: paginalogin.php');
   }
 	else
 	{
 		session_start();
 		$_SESSION['emailUsuarioLogado'] = $email;
-		header('location: ../home.html');
+		header('location: home.html');
 	}
 ?>
