@@ -34,7 +34,7 @@ body {
 #corpo {
   background-color: white;
   margin: auto;
-  width: 880px;
+  width: 500px;
   padding: 10px;
 }
 
@@ -125,7 +125,7 @@ a:-webkit-any-link {
  #erromensagem {
 	 border: 1px solid;
 	 background-color: #ffef8a;
-	 padding: 5px; 
+	 padding: 5px;
  }
 </style>
 <head>
