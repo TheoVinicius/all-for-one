@@ -70,10 +70,7 @@ a:-webkit-any-link {
 
 /*botão do menu fixo*/
 
-
-
-
-.dropbtn {
+.botao_cabeçalho {
 	 background-color :#ffeb3b;
 	 color : black;
 	 padding: 20px;
@@ -84,15 +81,14 @@ a:-webkit-any-link {
 
 		}
 
-	.dropbtn {
-			position: fixed;
+	.botao_cabeçalho {
+		position: fixed;
 		display: inline;
-		width: 2000px;
 
 	}
 
 
-	.dropdown-content {
+	.divbotao_cabeçalho-content {
 		display: none;
 		position: absolute;
 		background-color: lightgrey;
@@ -102,7 +98,7 @@ a:-webkit-any-link {
 	}
 
 
-		.dropdown-content a {
+		.divbotao_cabeçalho-content a {
 			color: black;
 		padding: 12px 16px;
 		text-decoration: none;
@@ -111,22 +107,30 @@ a:-webkit-any-link {
 
 	}
 
-	.dropdown-content a:hover {background-color: #ebec8f;}
-	.dropdown:hover   .dropdown-content {display:block;}
-	.dropdown:hover   .dropbtn {background-color: gray;}
+	.divbotao_cabeçalho-content a:hover {
+	background-color: #ebec8f;
+	}
+
+	.divbotao_cabeçalho:hover   .divbotao_cabeçalho-content {
+	display:block;
+	}
+
+	.divbotao_cabeçalho:hover   .botao_cabeçalho {
+	background-color: gray;
+	}
 
 </style>
 </head>
 
 
-<div class= "dropdown">
-<button class="dropbtn">all for onde</button>
-<div class="dropdown-content">
+<div class= "divbotao_cabeçalho">
+<button class="botao_cabeçalho">all for onde</button>
+<div class="divbotao_cabeçalho-content">
 
 
-<a href="https://mail.google.com">HUMOR</a>
-<a href="https://github.com/">DIÁRIO</a>
-<a href="https://globoesporte.globo.com">HOME</a>
+<a href="paginahumor.php">HUMOR</a>
+<a href="paginadiario.php">DIÁRIO</a>
+<a href="paginahome.php">HOME</a>
 
 
 </div>
