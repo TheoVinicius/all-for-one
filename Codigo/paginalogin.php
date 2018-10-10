@@ -39,10 +39,12 @@ body {
 }
 
 #corpo {
-  background-color: white;
   margin: auto;
   width: 400px;
-  padding: 10px;
+  background: #fff;
+  border: 400px;
+  margin-top: 200px;
+  padding-top: 10px;
 }
 
 #divtítulo {

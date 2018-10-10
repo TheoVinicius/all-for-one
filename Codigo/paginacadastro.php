@@ -32,10 +32,14 @@ body {
 }
 
 #corpo {
-  background-color: white;
-  margin: auto;
-  width: 500px;
-  padding: 10px;
+  
+  
+   margin: auto;
+  width: 400px;
+  background: #fff;
+  border: 400px;
+  margin-top: 200px;
+  padding-top: 10px;
 }
 
 #divtítulo {
