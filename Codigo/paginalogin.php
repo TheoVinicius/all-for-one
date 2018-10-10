@@ -33,8 +33,8 @@ body {
   -webkit-margin-after: 15px;
 	border: none;
 	border-radius: 0;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	border-top: 1px;
+	border-bottom: 1px solid #bdbbbb;
 	min-height: 44px;
 }
 
@@ -45,6 +45,9 @@ body {
   border: 400px;
   margin-top: 200px;
   padding-top: 10px;
+	border-radius: 10px;
+	border: 1px solid black
+	;
 }
 
 #divtítulo {

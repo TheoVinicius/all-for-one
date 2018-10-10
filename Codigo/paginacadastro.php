@@ -26,20 +26,23 @@ body {
   -webkit-margin-after: 15px;
 	border: none;
 	border-radius: 0;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	border-top: 1px ;
+	border-bottom: 1px ;
 	min-height: 44px;
+
 }
 
 #corpo {
-  
-  
+
+
    margin: auto;
   width: 400px;
   background: #fff;
   border: 400px;
   margin-top: 200px;
   padding-top: 10px;
+	border-radius: 10px;
+	border: 1px solid black;
 }
 
 #divtítulo {
@@ -112,7 +115,7 @@ a:-webkit-any-link {
 		flex-direction: row;
     justify-content: center;
     align-items: center;
-		border: 1px solid black;
+		border: 1px;
 }
 
 /*#corform {
