@@ -44,7 +44,7 @@ body {
   width: 400px;
   background: #fff;
   border: 400px;
-  margin-top: 60px;
+  margin-top: 35px;
   padding-top: 10px;
 	border-radius: 10px;
 	border: 1px solid black
@@ -85,7 +85,7 @@ body {
 }
 */
 #formulario {
-    font-family: fantasy;
+    font-family: Arial;
     font-size: 15px;
 		padding: 30px;
 		width: auto;
@@ -109,7 +109,11 @@ body {
 */
 .cadastrese {
 	font-size: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
+
 #linkcadastrese {
 	color: blue;
 }
@@ -128,6 +132,7 @@ body {
     text-align: center;
     display: inline-block;
     font-size: 15px;
+		margin-left: 40%;
 }
 </style>
 <head>
@@ -156,11 +161,12 @@ body {
 
   <div id="formulario">
 		<form method="POST" action="entrar.php">
-				<label>E-mail: <input  class="w3-input" name="email" type="email" required placeholder="example@example.net"/></label><br><br>
+				<label>E-mail: <input  id="input-email" class="w3-input" name="email" type="email" required placeholder="example@example.net"/></label><br><br>
 				<label> Senha: <input  class="w3-input" name="senha" type="password" required minlength="6" maxlength="12" placeholder="******"/></label>
         <br><br>
-			<input class="botao "type="submit" value="Entrar"/>
-				<br><br> <p class="cadastrese"> Ainda não possui login? </p> <a href='paginacadastro.php' class="cadastrese"id='linkcadastrese'> Cadastre-se </a>
+				<input class="botao "type="submit" value="Entrar"/>
+				<br>
+				<p class= "cadastrese"> Ainda não possui login? <a href='paginacadastro.php' id='linkcadastrese'> Cadastre-se </a> </p>
 		</form>
 
   </div>
