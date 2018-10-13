@@ -139,7 +139,7 @@ if ($erros != null)
 }
 else
 {
- $bd = new PDO('mysql:host=localhost;dbname=tcc_jambd;charset=utf8', 'tcc_jambd', 'jambdtcc');
+ $bd = new PDO('mysql:host=localhost;dbname=tcc-jambd;charset=utf8', 'tcc-jambd', 'jambdtcc');
 
   $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -157,5 +157,8 @@ else
  $insert->bindValue(':amigo', $request['amigo']);
 
  $insert -> execute();
+
+ session_start();
+ header('location: paginadiario.php');
 }
 ?>

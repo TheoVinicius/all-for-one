@@ -47,7 +47,7 @@ require_once ('conexaobd.php');
     {
       $erro = "Nenhum usuário cadastrado com o e-mail informado";
 	  }
-    else if (password_verify($senha, $usuario['senha']) == false)
+    else if (password_verify($senha, $usuario['senha']))
 	  {
 		   $erro = "A senha está incorreta";
 	  }
@@ -63,6 +63,6 @@ require_once ('conexaobd.php');
 	{
 		session_start();
 		$_SESSION['emailUsuarioLogado'] = $email;
-		header('location: home.html');
+		header('location: paginadiario.php');
 	}
 ?>
