@@ -166,7 +166,7 @@ body {
         <br><br>
 				<input class="botao "type="submit" value="Entrar"/>
 				<br>
-				<p class= "cadastrese"> Ainda não possui login? <a href='paginacadastro.php' id='linkcadastrese'> Cadastre-se </a> </p>
+				<p class= "cadastrese"> Ainda não possui uma conta? <a href='paginacadastro.php' id='linkcadastrese'> Cadastre-se </a> </p>
 		</form>
 
   </div>

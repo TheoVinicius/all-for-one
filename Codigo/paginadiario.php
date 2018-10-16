@@ -1,4 +1,19 @@
 <?php
+
+
+
+
+
+
+
+
+
+
+// para barra de menu fixa http://wime.com.br/2015/08/20/como-criar-um-cabecalho-fixo-sticky-header-com-css-e-jquery/
+
+
+
+
 require_once ('funções.php');
 
 session_start();
@@ -11,6 +26,16 @@ if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 }
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
+
+if (array_key_exists('errodiario', $_SESSION))
+{
+$erros = $_SESSION['errodiario'];
+unset($_SESSION['errodiario']);
+}
+else
+{
+	$erros = null;
+}
 
  ?>
 
@@ -28,7 +53,6 @@ body {
 #logo {
 	width:200px;
 	height: 200px;
-	position:relative;
 	top:50%;
 	left:50%;
 	margin-left:-100px;
@@ -47,11 +71,15 @@ body {
 #divtítulo {
 	padding: 6px;
 	padding-bottom: 10px;
-	margin: 0px;
 	border-bottom: 1px solid #e4e6e8;
-	margin-left: 26px;
-	margin-right: 26px;
 	margin-bottom: 6px;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 #menufixo {
@@ -92,9 +120,9 @@ p {
 }
 #text {
 	width:700px;
-	height: 600px;
-	font-family:Courier;
-	font-size:20px;
+	height: 500px;
+	font-family: cursive;
+	font-size:15px;
 	line-height: 30px;
 	padding-top: 3px;
 	padding-left:130px;
@@ -103,7 +131,37 @@ p {
 	background-repeat: repeat-y, repeat;
 	border-top:1px solid #FFF;
 	border-bottom:1px solid #FFF;
+	overflow: hidden;
+	word-wrap: break-word;
+	resize: none;
 }
+
+#formulario {
+	width: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.botao {
+		background-color: white;
+    border: 1px solid black;
+		border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+		margin-left: 40%;
+}
+
+#erromensagem {
+	border: 1px solid;
+	background-color: #ffef8a;
+	padding: 5px;
+}
+
+
 </style>
 
 <head>
@@ -128,12 +186,24 @@ p {
 			Lembre-se: nenhum outro usuário terá acesso ao que você escrever.	<br>
 	</p>
 
-	<form>
+	<?php if ($erros != null) { ?>
+		<div id='erromensagem'>
+				<p>Erro:
+					<?php foreach($erros as $erro)
+						{
+						echo $erro;
+						} ?>
+				</p>
+		</div>
+	<?php } ?>
+
+	<div id="formulario">
+	<form method="POST" action="salvadiario.php">
 		<label>Data: <input class="input" name="data_diario" type="date" required/></label> <br/> <br>
-		<textarea id="text" name="registrodiario" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>
+		<textarea id="text" name="registrodiario" ></textarea> <br> <br>
+		<input class="botao" type="submit" value="Salvar"/>
 	</form>
-
-
+	</div>
 
 
 
