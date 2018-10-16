@@ -65,7 +65,7 @@ CREATE TABLE postagem_categoria
 CREATE TABLE diario
 (
 	id_diario int auto_increment not null,
-	registrodiario int not null,
+	registrodiario varchar(2000) not null,
 	data_diario date not null,
 	id_usuario int not null,
 	primary key(id_diario),
@@ -73,4 +73,8 @@ CREATE TABLE diario
 );
 
 
+/*ALTER TABLE diario
+DROP registrodiario;
 
+ALTER TABLE diario
+ADD registrodiario varchar(3000);*/
