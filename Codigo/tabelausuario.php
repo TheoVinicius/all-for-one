@@ -16,7 +16,7 @@ $select->bindValue(':email', $email);
 
 $select -> execute();
 
-return $select -> fetch();
+return $select -> fetchColumn();
 }
 
 function BuscaID($email)
