@@ -12,7 +12,7 @@
 
 	if (array_key_exists('emailUsuarioLogado', $_SESSION) == true)
 	{
-		header('location: home.html');
+		header('location: paginadiario.php');
 	}
 ?>
 

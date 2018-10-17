@@ -12,10 +12,12 @@ if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 {
 	$_SESSION['erroLogin'] = "Identifique-se para acessar o perfil";
 	header('location: paginalogin.php');
+	exit();
 }
 else
 {
 	$email = $_SESSION['emailUsuarioLogado'];
+	$nome_usuario = BuscaNome($email);
 }
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
@@ -80,7 +82,7 @@ body {
 	right: 0;
 	left: 0;
 	top: 0;
-	height: 40px;
+	height: 60px;
 	background-color: white;
 	z-index: 99;
 }
@@ -153,6 +155,12 @@ p {
 	padding: 5px;
 }
 
+#logo_menufixo {
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	padding-left: 15px;
+}
 
 </style>
 
@@ -172,15 +180,17 @@ p {
 
 <body>
 
-	<div id = "menufixo"> ola aaaaa</div>
+	<div id = "menufixo">
+		<img id="logo_menufixo" src="../logo/logo_allforone.png">
+		<a class="botao" href="sair.php">Sair</a>
+	</div>
 
   <div id="corpo">
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
 
 	<p>Olá, <?php
-      		$nome = BuscaNome($email);
-      		echo $nome['nomePróprio'];
+      		echo $nome_usuario;
       		?>! <br>
 			Como foi seu dia hoje? <br>
 			Fique a vontade para expressar, aqui, todos os seus sentimentos! <br>
