@@ -1,29 +1,21 @@
 <?php
 
-
-
-
-
-
-
-
-
-
 // para barra de menu fixa http://www.tutorialwebdesign.com.br/simples-menu-scroll-fixo-com-jquery/
 //view-source:http://www.tutorialwebdesign.com.br/exemplos/menu-scroll-fixo-jquery/
 
 
-
-
-require_once ('funções.php');
+require_once ('tabelausuario.php');
 
 session_start();
-$email = $_SESSION['emailUsuarioLogado'];
 
 if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 {
 	$_SESSION['erroLogin'] = "Identifique-se para acessar o perfil";
 	header('location: paginalogin.php');
+}
+else
+{
+	$email = $_SESSION['emailUsuarioLogado'];
 }
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
@@ -37,6 +29,7 @@ else
 {
 	$erros = null;
 }
+
 
  ?>
 
