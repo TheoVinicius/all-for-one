@@ -9,7 +9,8 @@
 
 
 
-// para barra de menu fixa http://wime.com.br/2015/08/20/como-criar-um-cabecalho-fixo-sticky-header-com-css-e-jquery/
+// para barra de menu fixa http://www.tutorialwebdesign.com.br/simples-menu-scroll-fixo-com-jquery/
+//view-source:http://www.tutorialwebdesign.com.br/exemplos/menu-scroll-fixo-jquery/
 
 
 
@@ -56,6 +57,7 @@ body {
 	top:50%;
 	left:50%;
 	margin-left:-100px;
+	position: relative;
 }
 
 #corpo {
@@ -70,16 +72,13 @@ body {
 
 #divtítulo {
 	padding: 6px;
+	margin: 0px;
+	position: relative;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #e4e6e8;
+	margin-left: 26px;
+	margin-right: 26px;
 	margin-bottom: 6px;
-	width: auto;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
 }
 
 #menufixo {
@@ -90,7 +89,7 @@ body {
 	top: 0;
 	height: 40px;
 	background-color: white;
-
+	z-index: 99;
 }
 
 p {
@@ -152,7 +151,7 @@ p {
     text-align: center;
     display: inline-block;
     font-size: 15px;
-		margin-left: 40%;
+		margin-left: 45%;
 }
 
 #erromensagem {
@@ -167,6 +166,15 @@ p {
 <head>
   <title>Diário</title>
   <meta charset = "utf-8">
+
+	<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous">
+
+	</script>
+
+	<link rel="shortcut icon" href="../logo/favicon.ico" />
 </head>
 
 <body>
