@@ -12,10 +12,12 @@ if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 {
 	$_SESSION['erroLogin'] = "Identifique-se para acessar o perfil";
 	header('location: paginalogin.php');
+	exit();
 }
 else
 {
 	$email = $_SESSION['emailUsuarioLogado'];
+	$nome_usuario = BuscaNome($email);
 }
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
@@ -80,9 +82,10 @@ body {
 	right: 0;
 	left: 0;
 	top: 0;
-	height: 40px;
+	height: 50px;
 	background-color: white;
 	z-index: 99;
+  bottom: 0;
 }
 
 p {
@@ -102,14 +105,9 @@ p {
 	margin-right: auto;
 }
 
-#diario {
-	width: 750px;
-	height: 394px;
-	margin-left: auto;
-	margin-right: auto;
 
 }
-#text {
+//*#text {
 	width:700px;
 	height: 500px;
 	font-family: cursive;
@@ -125,9 +123,9 @@ p {
 	overflow: hidden;
 	word-wrap: break-word;
 	resize: none;
-}
+}*/
 
-#formulario {
+/#formulario {
 	width: auto;
 	display: flex;
 	flex-direction: row;
@@ -137,13 +135,14 @@ p {
 
 .botao {
 		background-color: white;
-    border: 1px solid black;
+    border: 1px solid grey;
 		border-radius: 4px;
-    padding: 5px;
-    text-align: center;
-    display: inline-block;
-    font-size: 15px;
-		margin-left: 45%;
+    padding: 6px;
+		margin-left: 90%;
+    float: left ;
+    margin-top: 15px;
+
+
 }
 
 #erromensagem {
@@ -152,11 +151,93 @@ p {
 	padding: 5px;
 }
 
+#logo_menufixo {
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+	padding-left: 15px;
+  float: left;
+}
+
+.botao1 {
+    width: 40px;
+    height: 40px;
+		border-radius: 60px;
+		margin: 20px;
+
+}
+
+.botao2 {
+    width: 40px;
+    height: 40px;
+    background-image:;
+		border-radius: 60px;
+		margin: 20px;
+
+}
+
+.botao3 {
+    width: 40px;
+    height: 40px;
+
+    background-image:;
+		border-radius: 60px;
+		margin: 20px;
+}
+
+.botao4 {
+    width: 75px;
+    height: 40px;
+    background-image:;
+		border-radius: 0px;
+		margin: 20px;
+}
+//*parte da barra de menu, daqui para baixo*/
+
+*{margin: 10; padding: 10s;}
+
+body{
+font-family: arial, helvetica, sans-serif;
+font-size: 12px;
+}
+
+.menu{
+list-style:none;
+border:1px solid #black;
+float: inherit;
+
+}
+
+.menu li{
+position:relative;
+float:left;
+border-right:1px solid #c0c0c0;
+border-top: 20px;
+}
+
+.menu li a{color:#222; text-decoration:none; padding:10px 180px; display: inline;}
+
+.menu li a:hover{
+background:#black;
+color:#black;
+-moz-box-shadow:0 10px 10px 0 #ccc;
+-webkit-box-shadow:0 5px 5px 0 #ccc;
+text-shadow:5px 5px 5px #ccc;
+}
+
+.menu li  ul{
+position:absolute;
+top:10px;
+left:0;
+background-color:#ccc;
+display:none;
+}
+
 
 </style>
 
 <head>
-  <title>HUMOR</title>
+  <title>Humor</title>
   <meta charset = "utf-8">
 
 	<script
@@ -171,18 +252,29 @@ p {
 
 <body>
 
-	<div id = "menufixo"> ola aaaaa</div>
+	<div id = "menufixo">
+		<img id="logo_menufixo" src="../logo/logo_allforone.png">
+		<a class="botao" href="sair.php">Sair</a>
+    <nav>
+    <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">humor</a></li>
+          <li><a href="#">diario</a>
+    <ul>
+  </nav>
+	</div>
 
   <div id="corpo">
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
 
+
+
 	<p>Olá, <?php
-      		$nome = BuscaNome($email);
-      		echo $nome['nomePróprio'];
+      		echo $nome_usuario;
       		?>! <br>
 			Como foi seu dia hoje? <br>
-			Sinta-se a vontade para expor o seu humor.<br>
+			Fique a vontade para expressar, aqui, todos os seus sentimentos! <br>
 			Lembre-se: nenhum outro usuário terá acesso ao que você escrever.	<br>
 	</p>
 
@@ -198,11 +290,13 @@ p {
 	<?php } ?>
 
 	<div id="formulario">
-	<form method="POST" action="">
+		<form method="POST" >
+       <input type="button" value="feliz" class="botao1">
+			 <input type="button" value="triste" class="botao2">
+			 <input type="button" value="raiva" class="botao3">
+			 <input type="button" value="indiferente" class="botao4">
 
-
-
-	</form>
+		</form>
 	</div>
 
 
