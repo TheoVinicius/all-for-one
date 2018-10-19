@@ -1,6 +1,6 @@
 <?php
 
-require_once ('conexaobd.php');
+require_once ('../Modelo/conexaobd.php');
 
  function BuscaUsuarioPorEmail($email)
 {
@@ -57,12 +57,12 @@ require_once ('conexaobd.php');
 	{
 		session_start();
 		$_SESSION['erroLogin'] = $erro;
-		header('location: paginalogin.php');
+		header('location: ../paginalogin.php');
   }
 	else
 	{
 		session_start();
 		$_SESSION['emailUsuarioLogado'] = $email;
-		header('location: paginadiario.php');
+		header('location: ../paginahome.php');
 	}
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once ('conexaobd.php');
+require_once ('../Modelo/conexaobd.php');
 
 function BuscaEmail($email)
 {
@@ -135,7 +135,7 @@ if ($erros != null)
 {
 	session_start();
 	$_SESSION['errocadastro'] = $erros;
-	header('location: paginacadastro.php');
+	header('location: ../paginacadastro.php');
 }
 else
 {
@@ -159,6 +159,6 @@ else
  $insert -> execute();
 
  session_start();
- header('location: paginadiario.php');
+ header('location: ../paginahome.php');
 }
 ?>

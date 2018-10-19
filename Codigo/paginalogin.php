@@ -161,7 +161,7 @@ body {
 		<?php } ?>
 
   <div id="formulario">
-		<form method="POST" action="entrar.php">
+		<form method="POST" action="Controlador/entrar.php">
 				<label>E-mail: <input  id="input-email" class="w3-input" name="email" type="email" required placeholder="example@example.net"/></label><br><br>
 				<label> Senha: <input  class="w3-input" name="senha" type="password" required minlength="6" maxlength="12" placeholder="******"/></label>
         <br><br>

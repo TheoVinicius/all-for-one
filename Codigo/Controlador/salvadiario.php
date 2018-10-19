@@ -1,13 +1,13 @@
 <?php
-require_once ('conexaobd.php');
-require_once ('tabelausuario.php');
+require_once ('../Modelo/conexaobd.php');
+require_once ('../Modelo/tabelausuario.php');
 
 session_start();
 
 if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 {
 	$_SESSION['erroLogin'] = "Identifique-se para acessar o perfil";
-	header('location: paginalogin.php');
+	header('location: ../paginalogin.php');
 	exit();
 }
 else
@@ -54,7 +54,7 @@ if ($erros != null)
 {
 
 	$_SESSION['errodiario'] = $erros;
-	header('location: paginadiario.php');
+	header('location: ../paginadiario.php');
 }
 else
 {
@@ -75,6 +75,6 @@ else
  $insert -> execute();
 
  session_start();
- header('location: paginadiario.php');
+ header('location: ../paginadiario.php');
 }
 ?>

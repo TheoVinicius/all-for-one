@@ -1,10 +1,6 @@
 <?php
 
-// para barra de menu fixa http://www.tutorialwebdesign.com.br/simples-menu-scroll-fixo-com-jquery/
-//view-source:http://www.tutorialwebdesign.com.br/exemplos/menu-scroll-fixo-jquery/
-
-
-require_once ('tabelausuario.php');
+require_once ('Modelo/tabelausuario.php');
 
 session_start();
 
@@ -22,10 +18,10 @@ else
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
 
-if (array_key_exists('errodiario', $_SESSION))
+if (array_key_exists('errohumor', $_SESSION))
 {
-$erros = $_SESSION['errodiario'];
-unset($_SESSION['errodiario']);
+$erros = $_SESSION['errohumor'];
+unset($_SESSION['errohumor']);
 }
 else
 {
@@ -56,7 +52,7 @@ body {
 }
 
 #corpo {
-	margin-top: 40px;
+	margin-top: 60px;
 	margin-left: auto;
 	margin-right: auto;
   background-color: #ffffff57;
@@ -76,16 +72,70 @@ body {
 	margin-bottom: 6px;
 }
 
+.botao {
+		padding-top: 15px;
+		background-color: white;
+    border: 1px solid grey;
+		border-radius: 4px;
+    padding: 6px;
+    float: left ;
+		color: black;
+		margin-left: 50px;
+		margin-top: 15px;
+}
+
 #menufixo {
 	width: auto;
 	position: fixed;
 	right: 0;
 	left: 0;
 	top: 0;
-	height: 50px;
+	height: 60px;
 	background-color: white;
 	z-index: 99;
   bottom: 0;
+}
+
+.listamenu {
+	padding-top: 20px;
+	list-style:none;
+	margin: 0px;
+	margin-left: 20%;
+	float: left;
+}
+
+.listamenu li {
+	display: inline;
+}
+
+.listamenu li a {
+	padding: 2px 20px;
+  display: inline-block;
+	color: black;
+	text-decoration:none;
+}
+
+.listamenu li a:hover{
+	color:#black;
+	border-bottom: 2px solid blue;
+}
+
+.listamenu li a:active{
+	color:#black;
+	border-bottom: 2px solid #2f3975;
+}
+
+#img_menufixo {
+	width: 17px;
+	margin-left: 5px;
+}
+
+#logo_menufixo {
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+  float: left;
+	margin-left: 50px;
 }
 
 p {
@@ -106,43 +156,12 @@ p {
 }
 
 
-}
-//*#text {
-	width:700px;
-	height: 500px;
-	font-family: cursive;
-	font-size:15px;
-	line-height: 30px;
-	padding-top: 3px;
-	padding-left:130px;
-	padding-right:10px;
-	background-image:url(../fundos/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
-	background-repeat: repeat-y, repeat;
-	border-top:1px solid #FFF;
-	border-bottom:1px solid #FFF;
-	overflow: hidden;
-	word-wrap: break-word;
-	resize: none;
-}*/
-
-/#formulario {
+#formulario {
 	width: auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-}
-
-.botao {
-		background-color: white;
-    border: 1px solid grey;
-		border-radius: 4px;
-    padding: 6px;
-		margin-left: 90%;
-    float: left ;
-    margin-top: 15px;
-
-
 }
 
 #erromensagem {
@@ -151,87 +170,51 @@ p {
 	padding: 5px;
 }
 
-#logo_menufixo {
-	width: 50px;
-	height: 50px;
-	padding: 5px;
-	padding-left: 15px;
-  float: left;
+.botao_sentimento {
+	border: none;
+  width: 40px;
+  height: 40px;
+	border-radius: 60px;
+	margin: 20px;
+	padding: 0px;
 }
 
-.botao1 {
-    width: 40px;
-    height: 40px;
-		border-radius: 60px;
-		margin: 20px;
-
+#botao_feliz {
+	background-image: url('../emojis/feliz.png');
 }
 
-.botao2 {
-    width: 40px;
-    height: 40px;
-    background-image:;
-		border-radius: 60px;
-		margin: 20px;
-
+#botao_triste {
+	background-image: url('../emojis/triste.png');
 }
 
-.botao3 {
-    width: 40px;
-    height: 40px;
-
-    background-image:;
-		border-radius: 60px;
-		margin: 20px;
+#botao_indiferente {
+	background-image: url('../emojis/indiferente.png');
 }
 
-.botao4 {
-    width: 75px;
-    height: 40px;
-    background-image:;
-		border-radius: 0px;
-		margin: 20px;
-}
-//*parte da barra de menu, daqui para baixo*/
-
-*{margin: 10; padding: 10s;}
-
-body{
-font-family: arial, helvetica, sans-serif;
-font-size: 12px;
+#botao_raiva {
+	background-image: url('../emojis/raiva.png');
 }
 
-.menu{
-list-style:none;
-border:1px solid #black;
-float: inherit;
-
+.divhumor {
+	border: 1px solid #e4e6e8;
+	padding: 10px;
+	margin: 10px;
 }
 
-.menu li{
-position:relative;
-float:left;
-border-right:1px solid #c0c0c0;
-border-top: 20px;
+h2 {
+	text-align: center;
 }
 
-.menu li a{color:#222; text-decoration:none; padding:10px 180px; display: inline;}
-
-.menu li a:hover{
-background:#black;
-color:#black;
--moz-box-shadow:0 10px 10px 0 #ccc;
--webkit-box-shadow:0 5px 5px 0 #ccc;
-text-shadow:5px 5px 5px #ccc;
+#botaoenviar {
+		background-color: white;
+    border: 1px solid grey;
+		border-radius: 4px;
+    padding: 6px;
+		margin-left: 45%;
+    float: left ;
+    margin-top: 15px;
 }
 
-.menu li  ul{
-position:absolute;
-top:10px;
-left:0;
-background-color:#ccc;
-display:none;
-}
 
 
 </style>
@@ -254,14 +237,13 @@ display:none;
 
 	<div id = "menufixo">
 		<img id="logo_menufixo" src="../logo/logo_allforone.png">
-		<a class="botao" href="sair.php">Sair</a>
-    <nav>
-    <ul class="menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">humor</a></li>
-          <li><a href="#">diario</a>
-    <ul>
-  </nav>
+    <ul class="listamenu">
+          <li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
+          <li><img id="img_menufixo" src="../menu fixo/humor.png"><a href="paginahumor.php">HUMOR </a></li>|
+          <li><img id="img_menufixo" src="../menu fixo/diario.png"><a href="paginadiario.php">DIÁRIO </a></li>|
+					<li><img id="img_menufixo" src="../menu fixo/perfil.png"><a href="paginaperfil.php">PERFIL</a></li>
+    </ul>
+		<a class="botao" href="Controlador/sair.php">Sair</a>
 	</div>
 
   <div id="corpo">
@@ -290,12 +272,32 @@ display:none;
 	<?php } ?>
 
 	<div id="formulario">
-		<form method="POST" >
-       <input type="button" value="feliz" class="botao1">
-			 <input type="button" value="triste" class="botao2">
-			 <input type="button" value="raiva" class="botao3">
-			 <input type="button" value="indiferente" class="botao4">
+		<form method="POST" action="Controlador/salvahumor.php">
+			<label>Data: <input class="input" name="data_humor" type="date" required/></label> <br/> <br>
+			<div class="divhumor">
+				<h2>MANHÃ</h2>
+       <input type="button" name="humormanha" value="1" id="botao_feliz" class="botao_sentimento">
+			 <input type="button" name="humormanha" value="2" id="botao_triste" class="botao_sentimento">
+			 <input type="button" name="humormanha" value="3" id="botao_indiferente" class="botao_sentimento">
+			 <input type="button" name="humormanha" value="4" id="botao_raiva" class="botao_sentimento">
+		 </div>
 
+		 <div class="divhumor">
+			 <h2>TARDE</h2>
+			<input type="button" name="humortarde" value="1" id="botao_feliz" class="botao_sentimento">
+			<input type="button" name="humortarde" value="2" id="botao_triste" class="botao_sentimento">
+			<input type="button" name="humortarde" value="3" id="botao_indiferente" class="botao_sentimento">
+			<input type="button" name="humortarde" value="4" id="botao_raiva" class="botao_sentimento">
+		</div>
+
+		<div class="divhumor">
+			<h2>NOITE</h2>
+		 <input type="button" name="humortarde" value="1" id="botao_feliz" class="botao_sentimento">
+		 <input type="button" name="humortarde" value="2" id="botao_triste" class="botao_sentimento">
+		 <input type="button" name="humortarde" value="3" id="botao_indiferente" class="botao_sentimento">
+		 <input type="button" name="humortarde" value="4" id="botao_raiva" class="botao_sentimento">
+	 </div>
+	 		<input id="botaoenviar" type="submit" value="Enviar"/>
 		</form>
 	</div>
 

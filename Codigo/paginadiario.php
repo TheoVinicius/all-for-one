@@ -4,7 +4,7 @@
 //view-source:http://www.tutorialwebdesign.com.br/exemplos/menu-scroll-fixo-jquery/
 
 
-require_once ('tabelausuario.php');
+require_once ('Modelo/tabelausuario.php');
 
 session_start();
 
@@ -56,7 +56,7 @@ body {
 }
 
 #corpo {
-	margin-top: 40px;
+	margin-top: 60px;
 	margin-left: auto;
 	margin-right: auto;
   background-color: #ffffff57;
@@ -76,6 +76,18 @@ body {
 	margin-bottom: 6px;
 }
 
+.botaosair {
+		padding-top: 15px;
+		background-color: white;
+    border: 1px solid grey;
+		border-radius: 4px;
+    padding: 6px;
+    float: left ;
+		color: black;
+		margin-left: 50px;
+		margin-top: 15px;
+}
+
 #menufixo {
 	width: auto;
 	position: fixed;
@@ -85,6 +97,49 @@ body {
 	height: 60px;
 	background-color: white;
 	z-index: 99;
+  bottom: 0;
+}
+
+.listamenu {
+	padding-top: 20px;
+	list-style:none;
+	margin: 0px;
+	margin-left: 20%;
+	float: left;
+}
+
+.listamenu li {
+	display: inline;
+}
+
+.listamenu li a {
+	padding: 2px 20px;
+  display: inline-block;
+	color: black;
+	text-decoration:none;
+}
+
+.listamenu li a:hover{
+	color:#black;
+	border-bottom: 2px solid blue;
+}
+
+.listamenu li a:active{
+	color:#black;
+	border-bottom: 2px solid #2f3975;
+}
+
+#img_menufixo {
+	width: 17px;
+	margin-left: 5px;
+}
+
+#logo_menufixo {
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+  float: left;
+	margin-left: 50px;
 }
 
 p {
@@ -154,14 +209,6 @@ p {
 	background-color: #ffef8a;
 	padding: 5px;
 }
-
-#logo_menufixo {
-	width: 50px;
-	height: 50px;
-	padding: 5px;
-	padding-left: 15px;
-}
-
 </style>
 
 <head>
@@ -182,7 +229,13 @@ p {
 
 	<div id = "menufixo">
 		<img id="logo_menufixo" src="../logo/logo_allforone.png">
-		<a class="botao" href="sair.php">Sair</a>
+		<ul class="listamenu">
+					<li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
+					<li><img id="img_menufixo" src="../menu fixo/humor.png"><a href="paginahumor.php">HUMOR </a></li>|
+					<li><img id="img_menufixo" src="../menu fixo/diario.png"><a href="paginadiario.php">DIÁRIO </a></li>|
+					<li><img id="img_menufixo" src="../menu fixo/perfil.png"><a href="paginaperfil.php">PERFIL</a></li>
+		</ul>
+		<a class="botaosair" href="Controlador/sair.php">Sair</a>
 	</div>
 
   <div id="corpo">
@@ -209,7 +262,7 @@ p {
 	<?php } ?>
 
 	<div id="formulario">
-	<form method="POST" action="salvadiario.php">
+	<form method="POST" action="Controlador/salvadiario.php">
 		<label>Data: <input class="input" name="data_diario" type="date" required/></label> <br/> <br>
 		<textarea id="text" name="registrodiario" ></textarea> <br> <br>
 		<input class="botao" type="submit" value="Salvar"/>

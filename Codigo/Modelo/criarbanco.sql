@@ -77,4 +77,12 @@ CREATE TABLE diario
 DROP registrodiario;
 
 ALTER TABLE diario
-ADD registrodiario varchar(3000);*/
+ADD registrodiario varchar(3000);
+
+ALTER TABLE humor
+ADD id_usuario int not null;
+
+ALTER TABLE humor
+ADD CONSTRAINT FK_USUARIOHUMOR
+FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario);
+*/

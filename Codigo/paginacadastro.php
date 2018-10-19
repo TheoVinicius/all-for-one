@@ -159,7 +159,7 @@ body {
 
 
 	<div id="formulario">
-	<form method="POST" action="cadastrousuario.php">
+	<form method="POST" action="Controlador/cadastrousuario.php">
    	<label>Nome: <input class="input" minlength="3" maxlength="35" name="nomePróprio" type="text" required/></label>
    	<label>Sobrenome: <input class="input" minlength="3" maxlength="35" name="sobrenome" type="text" required/></label> <br/> <br>
    	<label>E-mail: <input id="input-email" class="input" name="email" type="email" required/> <br/></label> <br>
