@@ -12,30 +12,31 @@
 
 	if (array_key_exists('emailUsuarioLogado', $_SESSION) == true)
 	{
-		header('location: home.html');
+		header('location: paginadiario.php');
 	}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 
 body {
-	background-image: url('../fundos/fundoprinc.jpg');
+	background-image: url('../fundos/fundo.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
-#Título {
+#titulo {
   font-family: fantasy;
-  font-size: 70px;
+  font-size: 50px;
   text-align: center;
-  padding: 0px;
-  -webkit-margin-after: 15px;
-	border: none;
-	border-radius: 0;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	min-height: 44px;
+  padding-top: 10px;
+	padding-bottom: 15px;
+	margin: 0px;
+  border-bottom: 1px solid #e4e6e8;
+	margin-left: 26px;
+	margin-right: 26px;
 }
 
 #corpo {
@@ -43,12 +44,25 @@ body {
   width: 400px;
   background: #fff;
   border: 400px;
-  margin-top: 200px;
+  margin-top: 35px;
   padding-top: 10px;
+	border-radius: 10px;
+	border: 1px solid black
+	;
 }
 
 #divtítulo {
   background-color:white;
+	align-items: center;
+}
+
+#logo {
+	width:60px;
+	height: 60px;
+	position:relative;
+	top:50%;
+	left:50%;
+	margin-left:-30px;
 }
 
 #cadastrologin {
@@ -71,8 +85,8 @@ body {
 }
 */
 #formulario {
-    font-family: fantasy;
-    font-size: 20px;
+    font-family: Arial;
+    font-size: 15px;
 		padding: 30px;
 		width: auto;
 		display: flex;
@@ -93,9 +107,15 @@ body {
 	border: 1px solid black;
 }
 */
-#cadastrese {
-	color: blue;
+.cadastrese {
 	font-size: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#linkcadastrese {
+	color: blue;
 }
 
 #erromensagem {
@@ -103,10 +123,22 @@ body {
 	background-color: #ffef8a;
 	padding: 5px;
 }
+
+.botao {
+		background-color: white;
+    border: 1px solid black;
+		border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+		margin-left: 40%;
+}
 </style>
 <head>
   <title>Login</title>
   <meta charset = "utf-8">
+	<link rel="shortcut icon" href="../logo/favicon.ico" />
 </head>
 
 
@@ -117,28 +149,29 @@ body {
 <!--	<div id="cadastrologin"><a href='paginacadastro.php'>Cadastro</a> <a href='paginlogin.php'>Login</a></div> -->
 
 
-  <div id="divtítulo"> <h1 id='Título'> LOGIN </h1>
+  <div id="divtítulo">
+		<img src="../logo/logo_allforone.png" align= "center" id="logo">
+		<p id="titulo">LOGIN</p>
+	</div>
 
 		<?php if ($erro != null) { ?>
 			<div id='erromensagem'>
 					<p>Erro: <?= $erro ?> </p>
 			</div>
 		<?php } ?>
-  </div>
 
   <div id="formulario">
-    <div id="corform">
-		<form method="POST" action="entrar.php">
-				<label>E-mail: <input name="email" type="email" required placeholder="example@example.net"/></label><br><br>
-				<label> Senha: <input name="senha" type="password" required minlength="6" maxlength="12" placeholder="******"/></label>
+		<form method="POST" action="Controlador/entrar.php">
+				<label>E-mail: <input  id="input-email" class="w3-input" name="email" type="email" required placeholder="example@example.net"/></label><br><br>
+				<label> Senha: <input  class="w3-input" name="senha" type="password" required minlength="6" maxlength="12" placeholder="******"/></label>
         <br><br>
-			<input type="submit" value="Entrar"/>
-				<br><br>	<a href='paginacadastro.php' id='cadastrese'>Cadastre-se</a>
+				<input class="botao "type="submit" value="Entrar"/>
+				<br>
+				<p class= "cadastrese"> Ainda não possui uma conta? <a href='paginacadastro.php' id='linkcadastrese'> Cadastre-se </a> </p>
 		</form>
 
   </div>
   </div>
 
-  </div>
 </body>
 </html>

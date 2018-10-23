@@ -1,5 +1,5 @@
 <?php
-require_once ('conexaobd.php');
+require_once ('../Modelo/conexaobd.php');
 
 function BuscaEmail($email)
 {
@@ -135,11 +135,11 @@ if ($erros != null)
 {
 	session_start();
 	$_SESSION['errocadastro'] = $erros;
-	header('location: paginacadastro.php');
+	header('location: ../paginacadastro.php');
 }
 else
 {
- $bd = new PDO('mysql:host=localhost;dbname=tcc_jambd;charset=utf8', 'tcc_jambd', 'jambdtcc');
+ $bd = new PDO('mysql:host=localhost;dbname=tcc-jambd;charset=utf8', 'tcc-jambd', 'jambdtcc');
 
   $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -157,5 +157,8 @@ else
  $insert->bindValue(':amigo', $request['amigo']);
 
  $insert -> execute();
+
+ session_start();
+ header('location: ../paginahome.php');
 }
 ?>

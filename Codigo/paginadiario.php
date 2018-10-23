@@ -1,5 +1,9 @@
 <?php
 
+// para barra de menu fixa http://www.tutorialwebdesign.com.br/simples-menu-scroll-fixo-com-jquery/
+//view-source:http://www.tutorialwebdesign.com.br/exemplos/menu-scroll-fixo-jquery/
+
+
 require_once ('Modelo/tabelausuario.php');
 
 session_start();
@@ -18,10 +22,10 @@ else
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
 
-if (array_key_exists('errohumor', $_SESSION))
+if (array_key_exists('errodiario', $_SESSION))
 {
-$erros = $_SESSION['errohumor'];
-unset($_SESSION['errohumor']);
+$erros = $_SESSION['errodiario'];
+unset($_SESSION['errodiario']);
 }
 else
 {
@@ -72,7 +76,7 @@ body {
 	margin-bottom: 6px;
 }
 
-.botao {
+.botaosair {
 		padding-top: 15px;
 		background-color: white;
     border: 1px solid grey;
@@ -155,6 +159,31 @@ p {
 	margin-right: auto;
 }
 
+#diario {
+	width: 750px;
+	height: 394px;
+	background-image: url(../fundos/papel_pautado_a4.png);
+	margin-left: auto;
+	margin-right: auto;
+
+}
+#text {
+	width:700px;
+	height: 500px;
+	font-family: cursive;
+	font-size:15px;
+	line-height: 30px;
+	padding-top: 3px;
+	padding-left:130px;
+	padding-right:10px;
+	background-image:url(../fundos/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+	background-repeat: repeat-y, repeat;
+	border-top:1px solid #FFF;
+	border-bottom:1px solid #FFF;
+	overflow: hidden;
+	word-wrap: break-word;
+	resize: none;
+}
 
 #formulario {
 	width: auto;
@@ -164,63 +193,26 @@ p {
 	align-items: center;
 }
 
+.botao {
+		background-color: white;
+    border: 1px solid black;
+		border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+		margin-left: 45%;
+}
+
 #erromensagem {
 	border: 1px solid;
 	background-color: #ffef8a;
 	padding: 5px;
 }
-
-.botao_sentimento {
-	border: none;
-  width: 40px;
-  height: 40px;
-	border-radius: 60px;
-	margin: 20px;
-	padding: 0px;
-}
-
-#botao_feliz {
-	background-image: url('../emojis/feliz.png');
-}
-
-#botao_triste {
-	background-image: url('../emojis/triste.png');
-}
-
-#botao_indiferente {
-	background-image: url('../emojis/indiferente.png');
-}
-
-#botao_raiva {
-	background-image: url('../emojis/raiva.png');
-}
-
-.divhumor {
-	border: 1px solid #e4e6e8;
-	padding: 10px;
-	margin: 10px;
-}
-
-h2 {
-	text-align: center;
-}
-
-#botaoenviar {
-		background-color: white;
-    border: 1px solid grey;
-		border-radius: 4px;
-    padding: 6px;
-		margin-left: 45%;
-    float: left ;
-    margin-top: 15px;
-}
-
-
-
 </style>
 
 <head>
-  <title>Humor</title>
+  <title>Diário</title>
   <meta charset = "utf-8">
 
 	<script
@@ -237,20 +229,18 @@ h2 {
 
 	<div id = "menufixo">
 		<img id="logo_menufixo" src="../logo/logo_allforone.png">
-    <ul class="listamenu">
-          <li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
-          <li><img id="img_menufixo" src="../menu fixo/humor.png"><a href="paginahumor.php">HUMOR </a></li>|
-          <li><img id="img_menufixo" src="../menu fixo/diario.png"><a href="paginadiario.php">DIÁRIO </a></li>|
+		<ul class="listamenu">
+					<li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
+					<li><img id="img_menufixo" src="../menu fixo/humor.png"><a href="paginahumor.php">HUMOR </a></li>|
+					<li><img id="img_menufixo" src="../menu fixo/diario.png"><a href="paginadiario.php">DIÁRIO </a></li>|
 					<li><img id="img_menufixo" src="../menu fixo/perfil.png"><a href="paginaperfil.php">PERFIL</a></li>
-    </ul>
-		<a class="botao" href="Controlador/sair.php">Sair</a>
+		</ul>
+		<a class="botaosair" href="Controlador/sair.php">Sair</a>
 	</div>
 
   <div id="corpo">
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
-
-
 
 	<p>Olá, <?php
       		echo $nome_usuario;
@@ -272,33 +262,11 @@ h2 {
 	<?php } ?>
 
 	<div id="formulario">
-		<form method="POST" action="Controlador/salvahumor.php">
-			<label>Data: <input class="input" name="data_humor" type="date" required/></label> <br/> <br>
-			<div class="divhumor">
-				<h2>MANHÃ</h2>
-       <input type="button" name="humormanha" value="1" id="botao_feliz" class="botao_sentimento">
-			 <input type="button" name="humormanha" value="2" id="botao_triste" class="botao_sentimento">
-			 <input type="button" name="humormanha" value="3" id="botao_indiferente" class="botao_sentimento">
-			 <input type="button" name="humormanha" value="4" id="botao_raiva" class="botao_sentimento">
-		 </div>
-
-		 <div class="divhumor">
-			 <h2>TARDE</h2>
-			<input type="button" name="humortarde" value="1" id="botao_feliz" class="botao_sentimento">
-			<input type="button" name="humortarde" value="2" id="botao_triste" class="botao_sentimento">
-			<input type="button" name="humortarde" value="3" id="botao_indiferente" class="botao_sentimento">
-			<input type="button" name="humortarde" value="4" id="botao_raiva" class="botao_sentimento">
-		</div>
-
-		<div class="divhumor">
-			<h2>NOITE</h2>
-		 <input type="button" name="humortarde" value="1" id="botao_feliz" class="botao_sentimento">
-		 <input type="button" name="humortarde" value="2" id="botao_triste" class="botao_sentimento">
-		 <input type="button" name="humortarde" value="3" id="botao_indiferente" class="botao_sentimento">
-		 <input type="button" name="humortarde" value="4" id="botao_raiva" class="botao_sentimento">
-	 </div>
-	 		<input id="botaoenviar" type="submit" value="Enviar"/>
-		</form>
+	<form method="POST" action="Controlador/salvadiario.php">
+		<label>Data: <input class="input" name="data_diario" type="date" required/></label> <br/> <br>
+		<textarea id="text" name="registrodiario" ></textarea> <br> <br>
+		<input class="botao" type="submit" value="Salvar"/>
+	</form>
 	</div>
 
 
