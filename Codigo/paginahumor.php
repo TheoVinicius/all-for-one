@@ -37,7 +37,7 @@ else
 <style>
 
 body {
-	background-image: url('../fundos/fundo.jpg');
+	/*background-image: url('../fundos/fundo.jpg');*/
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -58,6 +58,8 @@ body {
   background-color: #ffffff57;
   width: 880px;
   padding: 10px;
+	border-left: 1px solid #e4e6e8;
+	border-right: 1px solid #e4e6e8;
 
 }
 
@@ -170,30 +172,6 @@ p {
 	padding: 5px;
 }
 
-.botao_sentimento {
-	border: none;
-  width: 40px;
-  height: 40px;
-	border-radius: 60px;
-	margin: 20px;
-	padding: 0px;
-}
-
-#botao_feliz {
-	background-image: url('../emojis/feliz.png');
-}
-
-#botao_triste {
-	background-image: url('../emojis/triste.png');
-}
-
-#botao_indiferente {
-	background-image: url('../emojis/indiferente.png');
-}
-
-#botao_raiva {
-	background-image: url('../emojis/raiva.png');
-}
 
 .divhumor {
 	border: 1px solid #e4e6e8;
@@ -219,15 +197,41 @@ h2 {
 
 </style>
 
+
+
 <head>
   <title>Humor</title>
   <meta charset = "utf-8">
 
-	<script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous">
+	<script>
+	function selecionaHumor(turno, humor) {
+			document.getElementById('humor_' + turno + '_' + humor).src = "../emojis/" + humor + "_selecionado.png";
 
+			if (humor = 'feliz') {
+				document.getElementById('humor_' + turno).value = 1;
+				document.getElementById('humor_' + turno + '_triste').src = "../emojis/triste.png";
+				document.getElementById('humor_' + turno + '_indiferente').src = "../emojis/indiferente.png";
+				document.getElementById('humor_' + turno + '_raiva').src = "../emojis/raiva.png";
+			}
+			else if (humor = 'triste') {
+				document.getElementById('humor_' + turno).value = 2;
+				document.getElementById('humor_' + turno + '_feliz').src = "../emojis/feliz.png";
+				document.getElementById('humor_' + turno + '_indiferente').src = "../emojis/indiferente.png";
+				document.getElementById('humor_' + turno + '_raiva').src = "../emojis/raiva.png";
+			}
+			else if (humor = 'indiferente') {
+				document.getElementById('humor_' + turno).value = 3;
+				document.getElementById('humor_' + turno + '_feliz').src = "../emojis/feliz.png";
+				document.getElementById('humor_' + turno + '_triste').src = "../emojis/triste.png";
+				document.getElementById('humor_' + turno + '_raiva').src = "../emojis/raiva.png";
+			}
+			else if (humor = 'raiva') {
+				document.getElementById('humor_' + turno).value = 4;
+				document.getElementById('humor_' + turno + '_feliz').src = "../emojis/feliz.png";
+				document.getElementById('humor_' + turno + '_indiferente').src = "../emojis/indiferente.png";
+				document.getElementById('humor_' + turno + '_triste').src = "../emojis/triste.png";
+			}
+	}
 	</script>
 
 	<link rel="shortcut icon" href="../logo/favicon.ico" />
@@ -274,29 +278,35 @@ h2 {
 	<div id="formulario">
 		<form method="POST" action="Controlador/salvahumor.php">
 			<label>Data: <input class="input" name="data_humor" type="date" required/></label> <br/> <br>
+
 			<div class="divhumor">
 				<h2>MANHÃ</h2>
-       <input type="button" name="humormanha" value="1" id="botao_feliz" class="botao_sentimento">
-			 <input type="button" name="humormanha" value="2" id="botao_triste" class="botao_sentimento">
-			 <input type="button" name="humormanha" value="3" id="botao_indiferente" class="botao_sentimento">
-			 <input type="button" name="humormanha" value="4" id="botao_raiva" class="botao_sentimento">
+       <image id="humor_manha_feliz" onclick="selecionaHumor('manha', 'feliz')" src="../emojis/feliz.png"/>
+			 <image id="humor_manha_triste" onclick="selecionaHumor('manha', 'triste')"  src="../emojis/triste.png"/>
+			 <image id="humor_manha_indiferente" onclick="selecionaHumor('manha', 'indiferente')"  src="../emojis/indiferente.png"/>
+			 <image id="humor_manha_raiva" onclick="selecionaHumor('manha', 'raiva')"  src="../emojis/raiva.png"/>
+			 <input id="humor_manha" name="humormanha" type="hidden"/>
 		 </div>
 
 		 <div class="divhumor">
 			 <h2>TARDE</h2>
-			<input type="button" name="humortarde" value="1" id="botao_feliz" class="botao_sentimento">
-			<input type="button" name="humortarde" value="2" id="botao_triste" class="botao_sentimento">
-			<input type="button" name="humortarde" value="3" id="botao_indiferente" class="botao_sentimento">
-			<input type="button" name="humortarde" value="4" id="botao_raiva" class="botao_sentimento">
+			<image id="humor_tarde_feliz" onclick="selecionaHumor('tarde', 'feliz')" src="../emojis/feliz.png"/>
+			<image id="humor_tarde_triste" onclick="selecionaHumor('tarde', 'triste')"  src="../emojis/triste.png"/>
+			<image id="humor_tarde_indiferente" onclick="selecionaHumor('tarde', 'indiferente')"  src="../emojis/indiferente.png"/>
+			<image id="humor_tarde_raiva" onclick="selecionaHumor('tarde', 'raiva')"  src="../emojis/raiva.png"/>
+			<input id="humor_tarde" name="humortarde" type="hidden"/>
 		</div>
 
 		<div class="divhumor">
 			<h2>NOITE</h2>
-		 <input type="button" name="humortarde" value="1" id="botao_feliz" class="botao_sentimento">
-		 <input type="button" name="humortarde" value="2" id="botao_triste" class="botao_sentimento">
-		 <input type="button" name="humortarde" value="3" id="botao_indiferente" class="botao_sentimento">
-		 <input type="button" name="humortarde" value="4" id="botao_raiva" class="botao_sentimento">
+		 <image id="humor_noite_feliz" onclick="selecionaHumor('noite', 'feliz')" src="../emojis/feliz.png"/>
+		 <image id="humor_noite_triste" onclick="selecionaHumor('noite', 'triste')"  src="../emojis/triste.png"/>
+		 <image id="humor_noite_indiferente" onclick="selecionaHumor('noite', 'indiferente')"  src="../emojis/indiferente.png"/>
+		 <image id="humor_noite_raiva" onclick="selecionaHumor('noite', 'raiva')"  src="../emojis/raiva.png"/>
+		 <input id="humor_noite" name="humornoite" type="hidden"/>
 	 </div>
+
+
 	 		<input id="botaoenviar" type="submit" value="Enviar"/>
 		</form>
 	</div>

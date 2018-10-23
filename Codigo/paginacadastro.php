@@ -35,7 +35,6 @@ body {
   font-family: fantasy;
   font-size: 50px;
   text-align: center;
-<<<<<<< HEAD
   padding: 0px;
   -webkit-margin-after: 15px;
 	border: none;
@@ -51,7 +50,6 @@ body {
 
    margin: auto;
   width: 400px;
-=======
   padding-top: 10px;
 	padding-bottom: 15px;
 	margin: 0px;
@@ -73,7 +71,6 @@ body {
 #corpo {
   margin: auto;
   width: 700px;
->>>>>>> dc96c35ace10bec4b4c99de63bb2e182342745e6
   background: #fff;
   border: 400px;
   margin-top: 30px;
@@ -116,10 +113,8 @@ body {
 		flex-direction: row;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
 		border: 1px;
-=======
->>>>>>> dc96c35ace10bec4b4c99de63bb2e182342745e6
+
 }
 
  #erromensagem {
