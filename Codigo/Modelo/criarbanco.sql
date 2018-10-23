@@ -21,11 +21,13 @@ primary key(id_usuario)
 CREATE TABLE humor
 (
 	id_humor int auto_increment,
+	id_usuario int not null, 
 	humormanha int not null,
 	humortarde int not null,
 	humornoite int not null,
 	data_humor DATE not null,
-	primary key(id_humor)
+	primary key(id_humor),
+	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario);
 );
 
 CREATE TABLE postagem
