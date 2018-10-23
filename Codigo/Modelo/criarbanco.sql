@@ -27,7 +27,7 @@ CREATE TABLE humor
 	humornoite int not null,
 	data_humor DATE not null,
 	primary key(id_humor),
-	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario);
+	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
 );
 
 CREATE TABLE postagem
