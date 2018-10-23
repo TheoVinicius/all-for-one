@@ -25,12 +25,6 @@ else
 
 <style>
 
-body {
-	background-image: url('../fundos/fundo.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
 #logo {
 	width:200px;
 	height: 200px;
@@ -47,7 +41,8 @@ body {
   background-color: #ffffff57;
   width: 880px;
   padding: 10px;
-
+	border-left: 1px solid #e4e6e8;
+	border-right: 1px solid #e4e6e8;
 }
 
 #divtítulo {
@@ -83,6 +78,7 @@ body {
 	background-color: white;
 	z-index: 99;
   bottom: 0;
+	border-bottom: 1px solid #e4e6e8;
 }
 
 .listamenu {
@@ -106,12 +102,7 @@ body {
 
 .listamenu li a:hover{
 	color:#black;
-	border-bottom: 2px solid blue;
-}
-
-.listamenu li a:active{
-	color:#black;
-	border-bottom: 2px solid #2f3975;
+	border-bottom: 2px solid #f8e8a2;
 }
 
 #img_menufixo {

@@ -68,8 +68,8 @@ else
  );
 
  $insert->bindValue(':id_usuario', $id_usuario);
- $insert->bindValue(':data_diario', $request['data_diario']);
- $insert->bindValue(':registrodiario', $request ['registrodiario']);
+ $insert->bindValue(':data_diario', $data_diario);
+ $insert->bindValue(':registrodiario', $registrodiario);
 
 
  $insert -> execute();

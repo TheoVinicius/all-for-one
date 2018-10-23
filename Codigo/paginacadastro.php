@@ -25,12 +25,6 @@ else
 	width:160px;
 }
 
-body {
-	background-image: url('../fundos/fundo.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
 #titulo {
   font-family: fantasy;
   font-size: 50px;

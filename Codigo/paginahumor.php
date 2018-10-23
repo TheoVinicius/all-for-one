@@ -96,6 +96,7 @@ body {
 	background-color: white;
 	z-index: 99;
   bottom: 0;
+	border-bottom: 1px solid #e4e6e8;
 }
 
 .listamenu {
@@ -119,13 +120,9 @@ body {
 
 .listamenu li a:hover{
 	color:#black;
-	border-bottom: 2px solid blue;
+	border-bottom: 2px solid #f8e8a2;
 }
 
-.listamenu li a:active{
-	color:#black;
-	border-bottom: 2px solid #2f3975;
-}
 
 #img_menufixo {
 	width: 17px;

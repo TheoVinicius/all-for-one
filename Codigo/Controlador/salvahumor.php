@@ -26,9 +26,9 @@ $request = array_map('trim', $_REQUEST);
 			$request,
 			[
 				'data_humor' => FILTER_DEFAULT,
-				'humormanha' => FILTER_DEFAULT,
-				'humortarde' => FILTER_DEFAULT,
-				'humornoite' => FILTER_DEFAULT,
+				'humormanha' => FILTER_VALIDATE_INT,
+				'humortarde' => FILTER_VALIDATE_INT,
+				'humornoite' => FILTER_VALIDATE_INT,
 			]
 );
 
@@ -54,16 +54,15 @@ else
   $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
  $insert = $bd->prepare(
-   'INSERT INTO diario (id_usuario, data_diario, registrodiario)
+   'INSERT INTO diario (id_usuario, data_diario, registrodiario, humormanha, humortarde, humornoite)
     VALUES (:id_usuario, :data_humor, :humormanha, :humortarde, :humornoite)'
  );
 
  $insert->bindValue(':id_usuario', $id_usuario);
- $insert->bindValue(':data_diario', $request['data_humor']);
+ $insert->bindValue(':data_diario', $data_humor);
  $insert->bindValue(':humormanha', $request['humormanha']);
  $insert->bindValue(':humortarde', $request['humortarde']);
  $insert->bindValue(':humornoite', $request['humornoite']);
-
 
  $insert -> execute();
 
