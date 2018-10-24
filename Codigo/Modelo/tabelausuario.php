@@ -35,4 +35,21 @@ function BuscaID($email)
 
   return $select -> fetchColumn();
 }
+
+function BuscaDados($email)
+{
+  $bd = ConexaoBD();
+
+  $select = $bd -> prepare(
+    'SELECT nomePróprio, sobrenome, email, amigo, datNasc, sexo
+    FROM usuario
+    WHERE email = :email'
+  );
+
+  $select -> bindValue(':email', $email);
+
+  $select -> execute();
+
+  return $select -> fetch();
+}
  ?>

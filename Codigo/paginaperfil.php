@@ -14,6 +14,7 @@ else
 {
 	$email = $_SESSION['emailUsuarioLogado'];
 	$nome_usuario = BuscaNome($email);
+	$dados = BuscaDados($email);
 }
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
@@ -118,10 +119,18 @@ else
 	margin-left: 50px;
 }
 
+h2, strong {
+	font-family: fantasy;
+}
+
+.dados {
+	display: inline;
+}
+
 </style>
 
 <head>
-  <title>Home</title>
+  <title>Perfil</title>
   <meta charset = "utf-8">
 
 	<script
@@ -150,6 +159,26 @@ else
   <div id="corpo">
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
+
+	<h2>DADOS:</h2>
+	<strong>NOME:</strong><?= $dados['nomePróprio'] ?><?= $dados['sobrenome'] ?><br>
+	<strong>DATA DE NASCIMENTO:</strong><?= $dados['datNasc'] ?><br>
+	<div class='dados'><strong>SEXO:</strong><?php
+									if ($dados['sexo'] == 1)
+									{
+										echo "Feminino";
+									}
+									else if ($dados['sexo'] == 2)
+									{
+										echo "Masculino";
+									}
+									else if ($dados['sexo'] == 3)
+									{
+										echo "Outro";
+									}
+								 ?></div><br>
+	<div class='dados'><strong>EMAIL:</strong><?= $dados['email'] ?></div><br>
+	<div class='dados'><strong>AMIGO:</strong><?= $dados['amigo'] ?></div>
 
 
 	</div>
