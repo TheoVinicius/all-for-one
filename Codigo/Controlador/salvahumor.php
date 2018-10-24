@@ -54,12 +54,12 @@ else
   $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
  $insert = $bd->prepare(
-   'INSERT INTO diario (id_usuario, data_diario, registrodiario, humormanha, humortarde, humornoite)
+   'INSERT INTO humor (id_usuario, data_humor, humormanha, humortarde, humornoite)
     VALUES (:id_usuario, :data_humor, :humormanha, :humortarde, :humornoite)'
  );
 
  $insert->bindValue(':id_usuario', $id_usuario);
- $insert->bindValue(':data_diario', $data_humor);
+ $insert->bindValue(':data_humor', $data_humor);
  $insert->bindValue(':humormanha', $request['humormanha']);
  $insert->bindValue(':humortarde', $request['humortarde']);
  $insert->bindValue(':humornoite', $request['humornoite']);

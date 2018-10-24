@@ -209,25 +209,25 @@ h2 {
 	function selecionaHumor(turno, humor) {
 			document.getElementById('humor_' + turno + '_' + humor).src = "../emojis/" + humor + "_selecionado.png";
 
-			if (humor = 'feliz') {
+			if (humor == 'feliz') {
 				document.getElementById('humor_' + turno).value = 1;
 				document.getElementById('humor_' + turno + '_triste').src = "../emojis/triste.png";
 				document.getElementById('humor_' + turno + '_indiferente').src = "../emojis/indiferente.png";
 				document.getElementById('humor_' + turno + '_raiva').src = "../emojis/raiva.png";
 			}
-			else if (humor = 'triste') {
+			else if (humor == 'triste') {
 				document.getElementById('humor_' + turno).value = 2;
 				document.getElementById('humor_' + turno + '_feliz').src = "../emojis/feliz.png";
 				document.getElementById('humor_' + turno + '_indiferente').src = "../emojis/indiferente.png";
 				document.getElementById('humor_' + turno + '_raiva').src = "../emojis/raiva.png";
 			}
-			else if (humor = 'indiferente') {
+			else if (humor == 'indiferente') {
 				document.getElementById('humor_' + turno).value = 3;
 				document.getElementById('humor_' + turno + '_feliz').src = "../emojis/feliz.png";
 				document.getElementById('humor_' + turno + '_triste').src = "../emojis/triste.png";
 				document.getElementById('humor_' + turno + '_raiva').src = "../emojis/raiva.png";
 			}
-			else if (humor = 'raiva') {
+			else if (humor == 'raiva') {
 				document.getElementById('humor_' + turno).value = 4;
 				document.getElementById('humor_' + turno + '_feliz').src = "../emojis/feliz.png";
 				document.getElementById('humor_' + turno + '_indiferente').src = "../emojis/indiferente.png";
