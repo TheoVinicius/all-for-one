@@ -120,7 +120,7 @@
 }
 
 .botao {
-		background-color: white;
+		background-color: #f8e8a2;
     border: 1px solid black;
 		border-radius: 4px;
     padding: 5px;

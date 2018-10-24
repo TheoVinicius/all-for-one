@@ -64,7 +64,7 @@ else
     padding: 6px;
     float: left ;
 		color: black;
-		margin-left: 50px;
+		margin-left: 460px;
 		margin-top: 15px;
 }
 
@@ -85,7 +85,7 @@ else
 	padding-top: 20px;
 	list-style:none;
 	margin: 0px;
-	margin-left: 20%;
+	margin-left: 25%;
 	float: left;
 }
 

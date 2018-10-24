@@ -79,7 +79,7 @@ else
     padding: 6px;
     float: left ;
 		color: black;
-		margin-left: 50px;
+		margin-left: 550px;
 		margin-top: 15px;
 }
 
@@ -186,7 +186,7 @@ p {
 }
 
 .botao {
-		background-color: white;
+		background-color: #f8e8a2;
     border: 1px solid black;
 		border-radius: 4px;
     padding: 5px;

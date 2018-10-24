@@ -82,7 +82,7 @@ body {
     padding: 6px;
     float: left ;
 		color: black;
-		margin-left: 50px;
+		margin-left: 550px;
 		margin-top: 15px;
 }
 
@@ -178,16 +178,21 @@ p {
 
 h2 {
 	text-align: center;
+	font-family: fantasy;
 }
 
 #botaoenviar {
-		background-color: white;
+		background-color: #f8e8a2;
     border: 1px solid grey;
 		border-radius: 4px;
     padding: 6px;
 		margin-left: 45%;
     float: left ;
     margin-top: 15px;
+}
+
+.emoji {
+	margin: 15px;
 }
 
 
@@ -278,28 +283,28 @@ h2 {
 
 			<div class="divhumor">
 				<h2>MANHÃ</h2>
-       <image id="humor_manha_feliz" onclick="selecionaHumor('manha', 'feliz')" src="../emojis/feliz.png"/>
-			 <image id="humor_manha_triste" onclick="selecionaHumor('manha', 'triste')"  src="../emojis/triste.png"/>
-			 <image id="humor_manha_indiferente" onclick="selecionaHumor('manha', 'indiferente')"  src="../emojis/indiferente.png"/>
-			 <image id="humor_manha_raiva" onclick="selecionaHumor('manha', 'raiva')"  src="../emojis/raiva.png"/>
+       <image class="emoji" id="humor_manha_feliz" onclick="selecionaHumor('manha', 'feliz')" src="../emojis/feliz.png"/>
+			 <image class="emoji" id="humor_manha_triste" onclick="selecionaHumor('manha', 'triste')"  src="../emojis/triste.png"/>
+			 <image class="emoji" id="humor_manha_indiferente" onclick="selecionaHumor('manha', 'indiferente')"  src="../emojis/indiferente.png"/>
+			 <image class="emoji" id="humor_manha_raiva" onclick="selecionaHumor('manha', 'raiva')"  src="../emojis/raiva.png"/>
 			 <input id="humor_manha" name="humormanha" type="hidden"/>
 		 </div>
 
 		 <div class="divhumor">
 			 <h2>TARDE</h2>
-			<image id="humor_tarde_feliz" onclick="selecionaHumor('tarde', 'feliz')" src="../emojis/feliz.png"/>
-			<image id="humor_tarde_triste" onclick="selecionaHumor('tarde', 'triste')"  src="../emojis/triste.png"/>
-			<image id="humor_tarde_indiferente" onclick="selecionaHumor('tarde', 'indiferente')"  src="../emojis/indiferente.png"/>
-			<image id="humor_tarde_raiva" onclick="selecionaHumor('tarde', 'raiva')"  src="../emojis/raiva.png"/>
+			<image class="emoji" id="humor_tarde_feliz" onclick="selecionaHumor('tarde', 'feliz')" src="../emojis/feliz.png"/>
+			<image class="emoji" id="humor_tarde_triste" onclick="selecionaHumor('tarde', 'triste')"  src="../emojis/triste.png"/>
+			<image class="emoji" id="humor_tarde_indiferente" onclick="selecionaHumor('tarde', 'indiferente')"  src="../emojis/indiferente.png"/>
+			<image class="emoji" id="humor_tarde_raiva" onclick="selecionaHumor('tarde', 'raiva')"  src="../emojis/raiva.png"/>
 			<input id="humor_tarde" name="humortarde" type="hidden"/>
 		</div>
 
 		<div class="divhumor">
 			<h2>NOITE</h2>
-		 <image id="humor_noite_feliz" onclick="selecionaHumor('noite', 'feliz')" src="../emojis/feliz.png"/>
-		 <image id="humor_noite_triste" onclick="selecionaHumor('noite', 'triste')"  src="../emojis/triste.png"/>
-		 <image id="humor_noite_indiferente" onclick="selecionaHumor('noite', 'indiferente')"  src="../emojis/indiferente.png"/>
-		 <image id="humor_noite_raiva" onclick="selecionaHumor('noite', 'raiva')"  src="../emojis/raiva.png"/>
+		 <image class="emoji" id="humor_noite_feliz" onclick="selecionaHumor('noite', 'feliz')" src="../emojis/feliz.png"/>
+		 <image class="emoji" id="humor_noite_triste" onclick="selecionaHumor('noite', 'triste')"  src="../emojis/triste.png"/>
+		 <image class="emoji" id="humor_noite_indiferente" onclick="selecionaHumor('noite', 'indiferente')"  src="../emojis/indiferente.png"/>
+		 <image class="emoji" id="humor_noite_raiva" onclick="selecionaHumor('noite', 'raiva')"  src="../emojis/raiva.png"/>
 		 <input id="humor_noite" name="humornoite" type="hidden"/>
 	 </div>
 
