@@ -64,7 +64,7 @@ else
     padding: 6px;
     float: left ;
 		color: black;
-		margin-left: 460px;
+		margin-left: 350px;
 		margin-top: 15px;
 }
 
@@ -85,7 +85,7 @@ else
 	padding-top: 20px;
 	list-style:none;
 	margin: 0px;
-	margin-left: 25%;
+	margin-left: 20%;
 	float: left;
 }
 
@@ -104,6 +104,7 @@ else
 	color:#black;
 	border-bottom: 2px solid #f8e8a2;
 }
+
 
 #img_menufixo {
 	width: 17px;

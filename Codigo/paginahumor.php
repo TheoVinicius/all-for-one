@@ -82,7 +82,7 @@ body {
     padding: 6px;
     float: left ;
 		color: black;
-		margin-left: 550px;
+		margin-left: 350px;
 		margin-top: 15px;
 }
 

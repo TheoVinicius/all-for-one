@@ -66,7 +66,7 @@ else
     padding: 6px;
     float: left ;
 		color: black;
-		margin-left: 50px;
+		margin-left: 350px;
 		margin-top: 15px;
 }
 #menufixo {
@@ -119,14 +119,35 @@ else
 	margin-left: 50px;
 }
 
-h2, strong {
+h2 {
 	font-family: fantasy;
+	font-size: 40px;
+	margin-top: 0px;
+	text-align: center;
+}
+ strong {
+	font-family: fantasy;
+	font-size: 20px;
 }
 
-.dados {
-	display: inline;
+#dados {
+	border: 1px solid #e4e6e8;
+	padding: 10px;
+	margin: 10px;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
 }
 
+.botao_alterar {
+		background-color: white;
+    border: 1px solid grey;
+		border-radius: 4px;
+    padding: 6px;
+		color: black;
+		margin-left: 45%;
+}
 </style>
 
 <head>
@@ -160,10 +181,11 @@ h2, strong {
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
 
+	<div id='dados'>
 	<h2>DADOS:</h2>
-	<strong>NOME:</strong><?= $dados['nomePróprio'] ?><?= $dados['sobrenome'] ?><br>
-	<strong>DATA DE NASCIMENTO:</strong><?= $dados['datNasc'] ?><br>
-	<div class='dados'><strong>SEXO:</strong><?php
+	<strong>NOME:</strong> &nbsp; <?= $dados['nomePróprio'] ?><?= $dados['sobrenome'] ?><br><br>
+	<strong>DATA DE NASCIMENTO:</strong> &nbsp; <?= $dados['datNasc'] ?><br><br>
+	  <strong>SEXO:</strong> &nbsp; <?php
 									if ($dados['sexo'] == 1)
 									{
 										echo "Feminino";
@@ -176,10 +198,11 @@ h2, strong {
 									{
 										echo "Outro";
 									}
-								 ?></div><br>
-	<div class='dados'><strong>EMAIL:</strong><?= $dados['email'] ?></div><br>
-	<div class='dados'><strong>AMIGO:</strong><?= $dados['amigo'] ?></div>
-
+								 ?><br><br>
+	  <strong>EMAIL:</strong> &nbsp; <?= $dados['email'] ?><br><br>
+	  <strong>AMIGO:</strong> &nbsp; <?= $dados['amigo'] ?><br><br>
+		<a class='botao_alterar' href="alteradados.php">Alterar</a>
+</div>
 
 	</div>
 </body>
