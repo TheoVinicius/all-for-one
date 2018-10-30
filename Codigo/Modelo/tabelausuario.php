@@ -41,7 +41,7 @@ function BuscaDados($email)
   $bd = ConexaoBD();
 
   $select = $bd -> prepare(
-    'SELECT nomePróprio, sobrenome, email, amigo, datNasc, sexo
+    'SELECT nomePróprio, sobrenome, email, amigo, datNasc, sexo, id_usuario
     FROM usuario
     WHERE email = :email'
   );

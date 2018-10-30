@@ -1,6 +1,8 @@
 <?php
 
 require_once ('Modelo/tabelausuario.php');
+require_once ('Modelo/tabeladiario.php');
+require_once ('Modelo/tabelahumor.php');
 
 session_start();
 
@@ -15,6 +17,10 @@ else
 	$email = $_SESSION['emailUsuarioLogado'];
 	$nome_usuario = BuscaNome($email);
 	$dados = BuscaDados($email);
+	$id_usuario = $dados['id_usuario'];
+
+	$diario = BuscaÚltimoRegistro($id_usuario);
+	$humor = BuscaÚltimoHumor($id_usuario);
 }
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
@@ -201,8 +207,75 @@ h2 {
 								 ?><br><br>
 	  <strong>EMAIL:</strong> &nbsp; <?= $dados['email'] ?><br><br>
 	  <strong>AMIGO:</strong> &nbsp; <?= $dados['amigo'] ?><br><br>
-		<a class='botao_alterar' href="alteradados.php">Alterar</a>
-</div>
+
+				<a class='botao_alterar' href="alteradados.php">Alterar</a>
+	</div>
+
+	<div id='dados'>
+	<h2>DIÁRIO:</h2>
+	<strong>DATA:</strong> &nbsp; <?= $diario['data_diario'] ?><br><br>
+	<strong>REGISTRO:</strong> &nbsp; <?= $diario['registrodiario'] ?><br><br>
+	<a class='botao_alterar' href="paginahistorico.php">Histórico</a>
+	</div>
+
+	<div id='dados'>
+  <h2>HUMOR:</h2>
+  <strong>DATA:</strong> &nbsp; <?= $humor['data_humor'] ?><br><br>
+  <strong>HUMOR DA MANHÃ:</strong> &nbsp; <?php if($humor['humormanha'] = 1)
+																					{
+																						echo "<img src='../emojis/feliz_selecionado.png' />";
+																					}
+																					else if ($humor['humormanha'] = 2)
+																					{
+																						echo "<img src='../emojis/triste_selecionado.png' />";
+																					}
+																					else if ($humor['humormanha'] = 3)
+																					{
+																						echo "<img src='../emojis/indiferente_selecionado.png' />";
+																					}
+																					else if ($humor['humormanha'] = 2)
+																					{
+																						echo "<img src='../emojis/raiva_selecionado.png' />";
+																					}
+																		?><br><br>
+	<strong>HUMOR DA TARDE:</strong> &nbsp; <?php if($humor['humortarde'] = 1)
+																					{
+																						echo "<img src='../emojis/feliz_selecionado.png' />";
+																					}
+																					else if ($humor['humortarde'] = 2)
+																					{
+																						echo "<img src='../emojis/triste_selecionado.png' />";
+																					}
+																					else if ($humor['humortarde'] = 3)
+																					{
+																						echo "<img src='../emojis/indiferente_selecionado.png' />";
+																					}
+																					else if ($humor['humortarde'] = 2)
+																					{
+																						echo "<img src='../emojis/raiva_selecionado.png' />";
+																					}
+																		?><br><br>
+	<strong>HUMOR DA NOITE:</strong> &nbsp; <?php if($humor['humornoite'] = 1)
+																					{
+																						echo "<img src='../emojis/feliz_selecionado.png' />";
+																					}
+																					else if ($humor['humornoite'] = 2)
+																					{
+																						echo "<img src='../emojis/triste_selecionado.png' />";
+																					}
+																					else if ($humor['humornoite'] = 3)
+																					{
+																						echo "<img src='../emojis/indiferente_selecionado.png' />";
+																					}
+																					else if ($humor['humornoite'] = 2)
+																					{
+																						echo "<img src='../emojis/raiva_selecionado.png' />";
+																					}
+																		?><br><br>
+	<a class='botao_alterar' href="paginahistorico.php">Histórico</a>
+  </div>
+
+
 
 	</div>
 </body>
