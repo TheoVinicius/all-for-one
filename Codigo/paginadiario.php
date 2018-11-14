@@ -33,6 +33,8 @@ else
 }
 
 
+$data = new DateTime();
+
  ?>
 
 <!DOCTYPE html>
@@ -255,7 +257,7 @@ p {
 
 	<div id="formulario">
 	<form method="POST" action="Controlador/salvadiario.php">
-		<label>Data: <input class="input" name="data_diario" type="date" required/></label> <br/> <br>
+		<label>Data: <input class="input" name="data_diario" type="date" value="<?= $data->format('Y-m-d') ?>" required/></label> <br/> <br>
 		<textarea id="text" name="registrodiario" ></textarea> <br> <br>
 		<input class="botao" type="submit" value="Salvar"/>
 	</form>

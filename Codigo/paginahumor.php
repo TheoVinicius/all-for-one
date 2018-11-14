@@ -28,6 +28,7 @@ else
 	$erros = null;
 }
 
+$data = new DateTime();
 
  ?>
 
@@ -279,7 +280,7 @@ h2 {
 
 	<div id="formulario">
 		<form method="POST" action="Controlador/salvahumor.php">
-			<label>Data: <input class="input" name="data_humor" type="date" required/></label> <br/> <br>
+			<label>Data: <input class="input" name="data_humor" type="date" value="<?= $data->format('Y-m-d') ?>" required/></label> <br/> <br>
 
 			<div class="divhumor">
 				<h2>MANHÃ</h2>
@@ -287,7 +288,7 @@ h2 {
 			 <image class="emoji" id="humor_manha_triste" onclick="selecionaHumor('manha', 'triste')"  src="../emojis/triste.png"/>
 			 <image class="emoji" id="humor_manha_indiferente" onclick="selecionaHumor('manha', 'indiferente')"  src="../emojis/indiferente.png"/>
 			 <image class="emoji" id="humor_manha_raiva" onclick="selecionaHumor('manha', 'raiva')"  src="../emojis/raiva.png"/>
-			 <input id="humor_manha" name="humormanha" type="textbox"/>
+			 <input id="humor_manha" name="humormanha" type="hidden"/>
 		 </div>
 
 		 <div class="divhumor">
@@ -296,7 +297,7 @@ h2 {
 			<image class="emoji" id="humor_tarde_triste" onclick="selecionaHumor('tarde', 'triste')"  src="../emojis/triste.png"/>
 			<image class="emoji" id="humor_tarde_indiferente" onclick="selecionaHumor('tarde', 'indiferente')"  src="../emojis/indiferente.png"/>
 			<image class="emoji" id="humor_tarde_raiva" onclick="selecionaHumor('tarde', 'raiva')"  src="../emojis/raiva.png"/>
-			<input id="humor_tarde" name="humortarde" type="textbox"/>
+			<input id="humor_tarde" name="humortarde" type="hidden"/>
 		</div>
 
 		<div class="divhumor">
@@ -305,7 +306,7 @@ h2 {
 		 <image class="emoji" id="humor_noite_triste" onclick="selecionaHumor('noite', 'triste')"  src="../emojis/triste.png"/>
 		 <image class="emoji" id="humor_noite_indiferente" onclick="selecionaHumor('noite', 'indiferente')"  src="../emojis/indiferente.png"/>
 		 <image class="emoji" id="humor_noite_raiva" onclick="selecionaHumor('noite', 'raiva')"  src="../emojis/raiva.png"/>
-		 <input id="humor_noite" name="humornoite" type="textbox"/>
+		 <input id="humor_noite" name="humornoite" type="hidden"/>
 	 </div>
 
 

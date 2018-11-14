@@ -126,19 +126,19 @@ else
 }
 
 h2 {
-	font-family: fantasy;
+
 	font-size: 40px;
 	margin-top: 0px;
 	text-align: center;
 }
  strong {
-	font-family: fantasy;
+
 	font-size: 20px;
 }
 
 #dados {
-	border: 1px solid #e4e6e8;
-	padding: 10px;
+	border-bottom:1px solid #e4e6e8;
+	padding-bottom: 10px;
 	margin: 10px;
 	width: 600px;
 	margin-left: auto;
@@ -153,7 +153,20 @@ h2 {
     padding: 6px;
 		color: black;
 		margin-left: 45%;
+
 }
+
+#div_historico {
+
+	padding: 10px;
+	margin: 10px;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+
 </style>
 
 <head>
@@ -189,9 +202,9 @@ h2 {
 
 	<div id='dados'>
 	<h2>DADOS:</h2>
-	<strong>NOME:</strong> &nbsp; <?= $dados['nomePróprio'] ?><?= $dados['sobrenome'] ?><br><br>
-	<strong>DATA DE NASCIMENTO:</strong> &nbsp; <?= $dados['datNasc'] ?><br><br>
-	  <strong>SEXO:</strong> &nbsp; <?php
+	<u><strong>NOME:</strong></u> &nbsp; <?= $dados['nomePróprio'] ?><?= $dados['sobrenome'] ?><br><br>
+	<u><strong>DATA DE NASCIMENTO:</strong></u> &nbsp; <?= $dados['datNasc'] ?><br><br>
+	  <u><strong>SEXO:</strong></u> &nbsp; <?php
 									if ($dados['sexo'] == 1)
 									{
 										echo "Feminino";
@@ -205,23 +218,23 @@ h2 {
 										echo "Outro";
 									}
 								 ?><br><br>
-	  <strong>EMAIL:</strong> &nbsp; <?= $dados['email'] ?><br><br>
-	  <strong>AMIGO:</strong> &nbsp; <?= $dados['amigo'] ?><br><br>
+	  <u><strong>EMAIL:</strong></u> &nbsp; <?= $dados['email'] ?><br><br>
+	  <u><strong>AMIGO:</strong></u> &nbsp; <?= $dados['amigo'] ?><br><br>
 
-				<a class='botao_alterar' href="alteradados.php">Alterar</a>
+				<p><a class='botao_alterar' href="alteradados.php">Alterar</a></p>
 	</div>
 
-	<div id='dados'>
+	<div id='div_historico'>
 	<h2>DIÁRIO:</h2>
-	<strong>DATA:</strong> &nbsp; <?= $diario['data_diario'] ?><br><br>
-	<strong>REGISTRO:</strong> &nbsp; <?= $diario['registrodiario'] ?><br><br>
-	<a class='botao_alterar' href="paginahistorico.php">Histórico</a>
+	<u><strong>DATA:</strong></u> &nbsp; <?= $diario['data_diario'] ?><br><br>
+	<u><strong>REGISTRO:</strong></u> &nbsp; <?= $diario['registrodiario'] ?><br><br>
+
 	</div>
 
-	<div id='dados'>
+	<div id='div_historico'>
   <h2>HUMOR:</h2>
-  <strong>DATA:</strong> &nbsp; <?= $humor['data_humor'] ?><br><br>
-  <strong>HUMOR DA MANHÃ:</strong> &nbsp; <?php if($humor['humormanha'] = 1)
+  <u><strong>DATA:</strong></u> &nbsp; <?= $humor['data_humor'] ?><br><br>
+  <u><strong>HUMOR DA MANHÃ:</strong></u> &nbsp; <?php if($humor['humormanha'] = 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
@@ -238,7 +251,7 @@ h2 {
 																						echo "<img src='../emojis/raiva_selecionado.png' />";
 																					}
 																		?><br><br>
-	<strong>HUMOR DA TARDE:</strong> &nbsp; <?php if($humor['humortarde'] = 1)
+	<u><strong>HUMOR DA TARDE:</strong></u> &nbsp; <?php if($humor['humortarde'] = 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
@@ -255,7 +268,7 @@ h2 {
 																						echo "<img src='../emojis/raiva_selecionado.png' />";
 																					}
 																		?><br><br>
-	<strong>HUMOR DA NOITE:</strong> &nbsp; <?php if($humor['humornoite'] = 1)
+	<u><strong>HUMOR DA NOITE:</strong></u> &nbsp; <?php if($humor['humornoite'] = 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
