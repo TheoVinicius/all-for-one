@@ -189,7 +189,7 @@ h2 {
 
 	<div id='dados'>
 	<h2>DADOS:</h2>
-	<strong>NOME:</strong> &nbsp; <?= $dados['nomePróprio'] ?><?= $dados['sobrenome'] ?><br><br>
+	<strong>NOME:</strong> &nbsp; <?= $dados['nomePróprio'] ?>  &nbsp; <?= $dados['sobrenome'] ?><br><br>
 	<strong>DATA DE NASCIMENTO:</strong> &nbsp; <?= $dados['datNasc'] ?><br><br>
 	  <strong>SEXO:</strong> &nbsp; <?php
 									if ($dados['sexo'] == 1)
@@ -221,53 +221,53 @@ h2 {
 	<div id='dados'>
   <h2>HUMOR:</h2>
   <strong>DATA:</strong> &nbsp; <?= $humor['data_humor'] ?><br><br>
-  <strong>HUMOR DA MANHÃ:</strong> &nbsp; <?php if($humor['humormanha'] = 1)
+  <strong>HUMOR DA MANHÃ:</strong> &nbsp; <?php if($humor['humormanha'] == 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
-																					else if ($humor['humormanha'] = 2)
+																					else if ($humor['humormanha'] == 2)
 																					{
 																						echo "<img src='../emojis/triste_selecionado.png' />";
 																					}
-																					else if ($humor['humormanha'] = 3)
+																					else if ($humor['humormanha'] == 3)
 																					{
 																						echo "<img src='../emojis/indiferente_selecionado.png' />";
 																					}
-																					else if ($humor['humormanha'] = 2)
+																					else if ($humor['humormanha'] == 4)
 																					{
 																						echo "<img src='../emojis/raiva_selecionado.png' />";
 																					}
 																		?><br><br>
-	<strong>HUMOR DA TARDE:</strong> &nbsp; <?php if($humor['humortarde'] = 1)
+	<strong>HUMOR DA TARDE:</strong> &nbsp; <?php if($humor['humortarde'] == 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
-																					else if ($humor['humortarde'] = 2)
+																					else if ($humor['humortarde'] == 2)
 																					{
 																						echo "<img src='../emojis/triste_selecionado.png' />";
 																					}
-																					else if ($humor['humortarde'] = 3)
+																					else if ($humor['humortarde'] == 3)
 																					{
 																						echo "<img src='../emojis/indiferente_selecionado.png' />";
 																					}
-																					else if ($humor['humortarde'] = 2)
+																					else if ($humor['humortarde'] == 4)
 																					{
 																						echo "<img src='../emojis/raiva_selecionado.png' />";
 																					}
 																		?><br><br>
-	<strong>HUMOR DA NOITE:</strong> &nbsp; <?php if($humor['humornoite'] = 1)
+	<strong>HUMOR DA NOITE:</strong> &nbsp; <?php if($humor['humornoite'] == 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
-																					else if ($humor['humornoite'] = 2)
+																					else if ($humor['humornoite'] == 2)
 																					{
 																						echo "<img src='../emojis/triste_selecionado.png' />";
 																					}
-																					else if ($humor['humornoite'] = 3)
+																					else if ($humor['humornoite'] == 3)
 																					{
 																						echo "<img src='../emojis/indiferente_selecionado.png' />";
 																					}
-																					else if ($humor['humornoite'] = 2)
+																					else if ($humor['humornoite'] == 4)
 																					{
 																						echo "<img src='../emojis/raiva_selecionado.png' />";
 																					}
