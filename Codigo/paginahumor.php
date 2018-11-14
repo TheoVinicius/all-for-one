@@ -172,14 +172,14 @@ p {
 
 
 .divhumor {
-	border: 1px solid #e4e6e8;
+	border-bottom: 1px solid #e4e6e8;
 	padding: 10px;
-	margin: 10px;
+	margin: 10px;	
 }
 
 h2 {
 	text-align: center;
-	font-family: fantasy;
+
 }
 
 #botaoenviar {

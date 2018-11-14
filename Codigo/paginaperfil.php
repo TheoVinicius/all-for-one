@@ -202,10 +202,10 @@ h2 {
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
 
 	<div id='dados'>
-	<h2>DADOS:</h2>
-	<u><strong>NOME:</strong></u> &nbsp; <?= $dados['nomePróprio'] ?>  &nbsp; <?= $dados['sobrenome'] ?><br><br>
-	<u><strong>DATA DE NASCIMENTO:</strong></u> &nbsp; <?= $dados['datNasc'] ?><br><br>
-	  <u><strong>SEXO:</strong></u> &nbsp; <?php
+	<u><h2>DADOS</h2></u>
+	<strong>NOME:</strong> &nbsp; <?= $dados['nomePróprio'] ?>  &nbsp; <?= $dados['sobrenome'] ?><br><br>
+	<strong>DATA DE NASCIMENTO:</strong>&nbsp; <?= $dados['datNasc'] ?><br><br>
+	  <strong>SEXO:</strong> &nbsp; <?php
 									if ($dados['sexo'] == 1)
 									{
 										echo "Feminino";
@@ -219,23 +219,23 @@ h2 {
 										echo "Outro";
 									}
 								 ?><br><br>
-	  <u><strong>EMAIL:</strong></u> &nbsp; <?= $dados['email'] ?><br><br>
-	  <u><strong>AMIGO:</strong></u> &nbsp; <?= $dados['amigo'] ?><br><br>
+	  <strong>EMAIL:</strong> &nbsp; <?= $dados['email'] ?><br><br>
+	  <strong>AMIGO:</strong>&nbsp; <?= $dados['amigo'] ?><br><br>
 
 				<p><a class='botao_alterar' href="alteradados.php">Alterar</a></p>
 	</div>
 
 	<div id='div_historico'>
-	<h2>DIÁRIO:</h2>
-	<u><strong>DATA:</strong></u> &nbsp; <?= $diario['data_diario'] ?><br><br>
-	<u><strong>REGISTRO:</strong></u> &nbsp; <?= $diario['registrodiario'] ?><br><br>
+	<u><h2>DIÁRIO</h2></u>
+	<strong>DATA:</strong> &nbsp; <?= $diario['data_diario'] ?><br><br>
+	<strong>REGISTRO:</strong> &nbsp; <?= $diario['registrodiario'] ?><br><br>
 
 	</div>
 
 	<div id='div_historico'>
-  <h2>HUMOR:</h2>
-  <u><strong>DATA:</strong></u> &nbsp; <?= $humor['data_humor'] ?><br><br>
-  <u><strong>HUMOR DA MANHÃ:</strong></u> &nbsp; <?php if($humor['humormanha'] == 1)
+  <u><h2>HUMOR</h2></u>
+  <strong>DATA:</strong> &nbsp; <?= $humor['data_humor'] ?><br><br>
+  <strong>HUMOR DA MANHÃ:</strong> &nbsp; <?php if($humor['humormanha'] == 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
@@ -252,7 +252,7 @@ h2 {
 																						echo "<img src='../emojis/raiva_selecionado.png' />";
 																					}
 																		?><br><br>
-	<u><strong>HUMOR DA TARDE:</strong></u> &nbsp; <?php if($humor['humortarde'] == 1)
+	<strong>HUMOR DA TARDE:</strong> &nbsp; <?php if($humor['humortarde'] == 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
@@ -269,7 +269,7 @@ h2 {
 																						echo "<img src='../emojis/raiva_selecionado.png' />";
 																					}
 																		?><br><br>
-	<u><strong>HUMOR DA NOITE:</strong></u> &nbsp; <?php if($humor['humornoite'] == 1)
+	<strong>HUMOR DA NOITE:</strong> &nbsp; <?php if($humor['humornoite'] == 1)
 																					{
 																						echo "<img src='../emojis/feliz_selecionado.png' />";
 																					}
