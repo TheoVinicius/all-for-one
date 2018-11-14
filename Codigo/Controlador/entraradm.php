@@ -2,17 +2,17 @@
 
 require_once ('../Modelo/conexaobd.php');
 
- function BuscaUsuarioPorEmail($email)
+ function BuscaSenhaPorUsername($username)
 {
  $bd = ConexaoBD();
 
  $select = $bd->prepare(
    'SELECT senha
     FROM usuario
-    WHERE email = :email'
+    WHERE username = :username'
  );
 
- $select->bindValue(':email', $email);
+ $select->bindValue(':username', $username);
 
  $select -> execute();
 
@@ -25,16 +25,16 @@ require_once ('../Modelo/conexaobd.php');
 	$request = array_map('trim', $_REQUEST);
 	$request = filter_var_array(
 	               $request,
-	               [ 'email' => FILTER_VALIDATE_EMAIL,
+	               [ 'username' => FILTER_VALIDATE_EMAIL,
 	                 'senha' => FILTER_DEFAULT ]
 	           );
 
-	$email = $request['email'];
+	$username = $request['username'];
 	$senha = $request['senha'];
 
-	if ($email == false)
+	if ($username == false)
 	{
-		$erro = "E-Mail não informado";
+		$username = "E-Mail não informado";
 	}
 		else if ($senha == false)
 	{
@@ -42,12 +42,12 @@ require_once ('../Modelo/conexaobd.php');
 	}
 	else
   {
-    $usuario = BuscaUsuarioPorEmail($email);
-    if (empty($usurio) == false)
+    $adm = BuscaSenhaPorUsername($username);
+    if (empty($adm) == false)
     {
       $erro = "Nenhum usuário cadastrado com o e-mail informado";
 	  }
-    else if ( password_verify($senha, $usuario['senha']) == false )
+    else if ( password_verify($senha, $adm['senha']) == false )
 	  {
 		   $erro = "A senha está incorreta";
 	  }
@@ -57,13 +57,13 @@ require_once ('../Modelo/conexaobd.php');
 	{
 		session_start();
 		$_SESSION['erroLogin'] = $erro;
-		header('location: ../paginalogin.php');
+		header('location: ../paginaloginadm.php');
   }
 	else
 	{
 		session_start();
-		$_SESSION['emailUsuarioLogado'] = $email;
-    unset($_SESSION['emailAdmLogado']);
-		header('location: ../paginahome.php');
+		$_SESSION['emailAdmLogado'] = $email;
+    unset($_SESSION['emailUsuarioLogado']);
+		header('location: ../paginacadastroconteudo.php');
 	}
 ?>

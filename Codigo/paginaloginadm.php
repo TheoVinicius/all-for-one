@@ -10,9 +10,9 @@
 		$erro = null;
 	}
 
-	if (array_key_exists('emailUsuarioLogado', $_SESSION) == true)
+	if (array_key_exists('emailAdmLogado', $_SESSION) == true)
 	{
-		unset($_SESSION['emailAdmLogado']);
+		unset($_SESSION['emailUsuarioLogado']);
 		header('location: paginadiario.php');
 	}
 ?>
@@ -147,7 +147,7 @@
 
   <div id="divtítulo">
 		<img src="../logo/logo_allforone.png" align= "center" id="logo">
-		<p id="titulo">LOGIN</p>
+		<p id="titulo">LOGIN ADM</p>
 	</div>
 
 		<?php if ($erro != null) { ?>
@@ -157,14 +157,12 @@
 		<?php } ?>
 
   <div id="formulario">
-		<form method="POST" action="Controlador/entrar.php">
-				<label>E-mail: <input  id="input-email" class="w3-input" name="email" type="email" required placeholder="example@example.net"/></label><br><br>
+		<form method="POST" action="Controlador/entraradm.php">
+				<label>Username: <input  id="input-email" class="w3-input" name="username" type="text" required placeholder="example@example.net"/></label><br><br>
 				<label> Senha: <input  class="w3-input" name="senha" type="password" required minlength="6" maxlength="12" placeholder="******"/></label>
         <br><br>
 				<input class="botao "type="submit" value="Entrar"/>
 				<br>
-				<p class= "cadastrese"> Ainda não possui uma conta? <a href='paginacadastro.php' id='linkcadastrese'> Cadastre-se </a> </p>
-				<p class= "cadastrese"><a href='paginaloginadm.php' id='linkcadastrese'> Administrador </a> </p>
 		</form>
 
   </div>

@@ -1,5 +1,43 @@
 <?php
+
+require_once ('Modelo/tabelausuario.php');
+
 session_start();
+
+if (array_key_exists('emailAdmLogado', $_SESSION) == false)
+{
+	$_SESSION['erroLogin'] = "Identifique-se para acessar a administração";
+	header('location: paginaloginadm.php');
+	exit();
+}
+
+if (array_key_exists('emailUsuarioLogado', $_SESSION) == true)
+{
+	header('location: paginahome.php');
+	exit();
+}
+else
+{
+	$email = $_SESSION['emailUsuarioLogado'];
+	$nome_usuario = BuscaNome($email);
+}
+
+
+//$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
+
+if (array_key_exists('errodiario', $_SESSION))
+{
+$erros = $_SESSION['errodiario'];
+unset($_SESSION['errodiario']);
+}
+else
+{
+	$erros = null;
+}
+
+
+$data = new DateTime();
+
  ?>
 
 <!DOCTYPE html>
@@ -123,18 +161,7 @@ session_start();
 		<img id="logo_menufixo" src="../logo/logo_allforone.png">
     <ul class="listamenu">
           <li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
-          <?php
-            if(array_key_exists('emailAdmLogado', $_SESSION) == false)	{
-          ?>
-          <li><img id="img_menufixo" src="../menu fixo/humor.png"><a href="paginahumor.php">HUMOR </a></li>|
-          <li><img id="img_menufixo" src="../menu fixo/diario.png"><a href="paginadiario.php">DIÁRIO </a></li>|
-					<li><img id="img_menufixo" src="../menu fixo/perfil.png"><a href="paginaperfil.php">PERFIL</a></li>
-          	<?php } ?>
-          <?php
-            if(array_key_exists('emailAdmLogado', $_SESSION) == true)	{
-          ?>
 					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li>
-				<?php } ?>
     </ul>
 		<a class="botao" href="Controlador/sair.php">Sair</a>
 	</div>
@@ -145,5 +172,6 @@ session_start();
 
 
 	</div>
+
 </body>
 </html>

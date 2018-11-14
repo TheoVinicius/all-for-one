@@ -150,7 +150,7 @@ else
 
  $insert->bindValue(':nomeProprio', $request['nomePróprio']);
  $insert->bindValue(':sobrenome', $request['sobrenome']);
- $insert->bindValue(':senha', $request ['senha']);
+ $insert->bindValue(':senha', $senha);
  $insert->bindValue(':email', $request['email']);
  $insert->bindValue(':datNasc', $request['dataNasc']);
  $insert->bindValue(':sexo', $request['sexo']);

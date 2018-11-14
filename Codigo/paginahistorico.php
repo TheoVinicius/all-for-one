@@ -8,7 +8,7 @@ session_start();
 
 if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 {
-	$_SESSION['erroLogin'] = "Identifique-se para acessar o perfil";
+	$_SESSION['erroLogin'] = "Identifique-se para acessar o histórico";
 	header('location: paginalogin.php');
 	exit();
 }
@@ -161,6 +161,7 @@ else
           <li><img id="img_menufixo" src="../menu fixo/humor.png"><a href="paginahumor.php">HUMOR </a></li>|
           <li><img id="img_menufixo" src="../menu fixo/diario.png"><a href="paginadiario.php">DIÁRIO </a></li>|
 					<li><img id="img_menufixo" src="../menu fixo/perfil.png"><a href="paginaperfil.php">PERFIL</a></li>
+				
     </ul>
 		<a class="botao" href="Controlador/sair.php">Sair</a>
 	</div>

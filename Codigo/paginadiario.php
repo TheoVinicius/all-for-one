@@ -1,16 +1,12 @@
 <?php
 
-// para barra de menu fixa http://www.tutorialwebdesign.com.br/simples-menu-scroll-fixo-com-jquery/
-//view-source:http://www.tutorialwebdesign.com.br/exemplos/menu-scroll-fixo-jquery/
-
-
 require_once ('Modelo/tabelausuario.php');
 
 session_start();
 
 if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 {
-	$_SESSION['erroLogin'] = "Identifique-se para acessar o perfil";
+	$_SESSION['erroLogin'] = "Identifique-se para acessar o diário";
 	header('location: paginalogin.php');
 	exit();
 }
