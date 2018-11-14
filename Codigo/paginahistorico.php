@@ -19,8 +19,7 @@ else
 	$dados = BuscaDados($email);
 	$id_usuario = $dados['id_usuario'];
 
-	$diario = BuscaRegistro($id_usuario);
-	$humor = BuscaHumor($id_usuario);
+	$historico = BuscaHistorico($id_usuario);
 }
 
 //$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
@@ -170,64 +169,78 @@ else
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
 
- 	<?php foreach($diario as $d) {?>
+ 	<?php foreach($historico as $h) {?>
 		<div id="dados">
+			<strong>DATA:</strong> &nbsp; <?= ($h['data_diario'] != null) ? $h['data_diario'] : $h['data_humor'] ?><br><br>
+			<?php if($h['registrodiario'] != null) {?>
 			<h2>DIÁRIO:</h2>
-			<strong>DATA:</strong> &nbsp; <?= $d['data_diario'] ?><br><br>
-			<strong>REGISTRO:</strong> &nbsp; <?= $d['registrodiario'] ?><br><br>
+			<strong>REGISTRO:</strong> &nbsp; <?= $h['registrodiario'] ?><br><br>
+			<?php  }
+					else
+					{ ?>
+						<p>Não há registro do diário neste dia.</p>
+	  	<?php } ?>
+
+		<?php if($h['humormanha'] != null) {?>
 		<h2>HUMOR:</h2>
-	  <strong>HUMOR DA MANHÃ:</strong> &nbsp; <?php if($humor['humormanha'] = 1)
+	  <strong>HUMOR DA MANHÃ:</strong> &nbsp; <?php if($h['humormanha'] == 1)
 																						{
 																							echo "<img src='../emojis/feliz_selecionado.png' />";
 																						}
-																						else if ($humor['humormanha'] = 2)
+																						else if ($h['humormanha'] == 2)
 																						{
 																							echo "<img src='../emojis/triste_selecionado.png' />";
 																						}
-																						else if ($humor['humormanha'] = 3)
+																						else if ($h['humormanha'] == 3)
 																						{
 																							echo "<img src='../emojis/indiferente_selecionado.png' />";
 																						}
-																						else if ($humor['humormanha'] = 2)
+																						else if ($h['humormanha'] == 4)
 																						{
 																							echo "<img src='../emojis/raiva_selecionado.png' />";
 																						}
 																			?><br><br>
-		<strong>HUMOR DA TARDE:</strong> &nbsp; <?php if($humor['humortarde'] = 1)
+		<strong>HUMOR DA TARDE:</strong> &nbsp; <?php if($h['humortarde'] == 1)
 																						{
 																							echo "<img src='../emojis/feliz_selecionado.png' />";
 																						}
-																						else if ($humor['humortarde'] = 2)
+																						else if ($h['humortarde'] == 2)
 																						{
 																							echo "<img src='../emojis/triste_selecionado.png' />";
 																						}
-																						else if ($humor['humortarde'] = 3)
+																						else if ($h['humortarde'] == 3)
 																						{
 																							echo "<img src='../emojis/indiferente_selecionado.png' />";
 																						}
-																						else if ($humor['humortarde'] = 2)
+																						else if ($h['humortarde'] == 4)
 																						{
 																							echo "<img src='../emojis/raiva_selecionado.png' />";
 																						}
 																			?><br><br>
-		<strong>HUMOR DA NOITE:</strong> &nbsp; <?php if($humor['humornoite'] = 1)
+		<strong>HUMOR DA NOITE:</strong> &nbsp; <?php if($h['humornoite'] == 1)
 																						{
 																							echo "<img src='../emojis/feliz_selecionado.png' />";
 																						}
-																						else if ($humor['humornoite'] = 2)
+																						else if ($h['humornoite'] == 2)
 																						{
 																							echo "<img src='../emojis/triste_selecionado.png' />";
 																						}
-																						else if ($humor['humornoite'] = 3)
+																						else if ($h['humornoite'] == 3)
 																						{
 																							echo "<img src='../emojis/indiferente_selecionado.png' />";
 																						}
-																						else if ($humor['humornoite'] = 2)
+																						else if ($h['humornoite'] == 4)
 																						{
 																							echo "<img src='../emojis/raiva_selecionado.png' />";
 																						}
-																			?><br><br>
+																			?>
+		<?php  }
+		      else
+	      	{ ?>
+		<p>Não há registro do humor neste dia.</p>
+		<?php } ?>
 			</div>
+
 	<?php } ?>
 
 	</div>
