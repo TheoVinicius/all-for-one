@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Modelo/tabelausuario.php');
+require_once ('Modelo/tabelaadm.php');
 
 session_start();
 
@@ -16,25 +17,16 @@ if (array_key_exists('emailUsuarioLogado', $_SESSION) == true)
 	header('location: paginahome.php');
 	exit();
 }
-else
+
+if (array_key_exists('erroCarregamento', $_SESSION))
 {
-	$email = $_SESSION['emailUsuarioLogado'];
-	$nome_usuario = BuscaNome($email);
-}
-
-
-//$fmt = new NumberFormatter('pt_BR', NumberFormatter::CURRENCY);
-
-if (array_key_exists('errodiario', $_SESSION))
-{
-$erros = $_SESSION['errodiario'];
-unset($_SESSION['errodiario']);
+$erros = $_SESSION['erroCarregamento'];
+unset($_SESSION['erroCarregamento']);
 }
 else
 {
 	$erros = null;
 }
-
 
 $data = new DateTime();
 
@@ -125,7 +117,6 @@ $data = new DateTime();
 	border-bottom: 2px solid #f8e8a2;
 }
 
-
 #img_menufixo {
 	width: 17px;
 	margin-left: 5px;
@@ -139,18 +130,14 @@ $data = new DateTime();
 	margin-left: 50px;
 }
 
+
+
 </style>
 
 <head>
   <title>Home</title>
+
   <meta charset = "utf-8">
-
-	<script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous">
-
-	</script>
 
 	<link rel="shortcut icon" href="../logo/favicon.ico" />
 </head>
@@ -163,15 +150,47 @@ $data = new DateTime();
           <li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
 					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li>
     </ul>
-		<a class="botao" href="Controlador/sair.php">Sair</a>
+		<a class="botao" href="Controlador/sairadm.php">Sair</a>
 	</div>
 
   <div id="corpo">
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
 
+	<?php if ($erros != null) { ?>
+		<div id='erromensagem'>
+				<p>Erro:
+					<?php foreach($erros as $erro)
+						{
+						echo $erro;
+						} ?>
+				</p>
+		</div>
+	<?php } ?>
 
+	<div id="formulario">
+	<form method="POST" action="Controlador/enviaArquivo.php" enctype="multipart/form-data" >
+
+			<input name="id_adm" type="hidden" value="<?= $id_adm ?>">
+
+			<label>Data: <input class="input" name="data_postagem" type="date" value="<?= $data->format('Y-m-d') ?>" required/></label> <br/> <br>
+
+			<label>Categoria: <input class="input" name="categoria" type="text" required/></label> <br/> <br>
+
+	  	<input name="arquivo_postagem" type="file">
+
+			<input type="submit" value="Enviar">
+	</form>
 	</div>
+
+<br><br><br><br><br>
+
+<div id="formulario">
+	<form method="POST">
+     <label>Categoria: <input class="input" name="categoria" type="text" required/></label> <br/> <br>
+		 	<input type="submit" value="Enviar">
+	</form>
+</div>
 
 </body>
 </html>

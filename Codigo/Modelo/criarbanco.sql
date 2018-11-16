@@ -21,7 +21,7 @@ primary key(id_usuario)
 CREATE TABLE humor
 (
 	id_humor int auto_increment,
-	id_usuario int not null, 
+	id_usuario int not null,
 	humormanha int not null,
 	humortarde int not null,
 	humornoite int not null,
@@ -30,13 +30,23 @@ CREATE TABLE humor
 	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
 );
 
+CREATE TABLE categoria
+(
+	id_categoria int auto_increment not null,
+	categoria varchar(100) not null,
+	primary key(id_categoria)
+);
+
 CREATE TABLE postagem
 (
 	id_postagem int auto_increment,
 	data_postagem date not null,
 	id_adm int not null,
+  id_categoria int not null,
+  arquivo_postagem varchar(100),
 	primary key(id_postagem),
-	foreign key (id_adm) references adm(id_adm)
+	foreign key (id_adm) references adm(id_adm),
+  foreign key (id_categoria) references categoria(id_categoria)
 );
 
 CREATE TABLE usuario_postagem
@@ -48,21 +58,6 @@ CREATE TABLE usuario_postagem
 	foreign key(id_postagem) references postagem(id_postagem)
 );
 
-CREATE TABLE categoria
-(
-	id_categoria int auto_increment not null,
-	categoria int not null,
-	primary key(id_categoria)
-);
-
-CREATE TABLE postagem_categoria
-(
-	id_postagem int not null,
-	id_categoria int  not null,
-	primary key(id_postagem, id_categoria),
-	foreign key (id_postagem) references postagem(id_postagem),
-	foreign key (id_categoria) references categoria(id_categoria)
-);
 
 CREATE TABLE diario
 (
