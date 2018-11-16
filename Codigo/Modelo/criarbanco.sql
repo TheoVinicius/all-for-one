@@ -11,7 +11,7 @@ id_usuario INT not null auto_increment,
 senha VARCHAR (60),
 nomePróprio VARCHAR(35),
 sobrenome VARCHAR(35),
-email VARCHAR(255),
+email VARCHAR(255) not null unique,
 amigo VARCHAR (35),
 datNasc DATE,
 sexo INT,
@@ -21,7 +21,7 @@ primary key(id_usuario)
 CREATE TABLE humor
 (
 	id_humor int auto_increment,
-	id_usuario int not null, 
+	id_usuario int not null,
 	humormanha int not null,
 	humortarde int not null,
 	humornoite int not null,

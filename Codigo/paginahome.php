@@ -5,6 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 
+
 <style>
 
 #logo {
@@ -67,7 +68,7 @@ session_start();
 	padding-top: 20px;
 	list-style:none;
 	margin: 0px;
-	margin-left: 20%;
+	margin-left: 25%;
 	float: left;
 }
 
@@ -100,6 +101,7 @@ session_start();
   float: left;
 	margin-left: 50px;
 }
+
 
 </style>
 
@@ -145,5 +147,6 @@ session_start();
 
 
 	</div>
+
 </body>
 </html>

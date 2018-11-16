@@ -52,4 +52,6 @@ function BuscaDados($email)
 
   return $select -> fetch();
 }
+
+
  ?>

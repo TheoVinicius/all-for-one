@@ -2,7 +2,7 @@
 
 require_once ('../Modelo/conexaobd.php');
 
- function BuscaUsuarioPorEmail($email)
+ function BuscaSenhaPorEmail($email)
 {
  $bd = ConexaoBD();
 
@@ -42,7 +42,7 @@ require_once ('../Modelo/conexaobd.php');
 	}
 	else
   {
-    $usuario = BuscaUsuarioPorEmail($email);
+    $usuario = BuscaSenhaPorEmail($email);
     if (empty($usurio) == false)
     {
       $erro = "Nenhum usuário cadastrado com o e-mail informado";
