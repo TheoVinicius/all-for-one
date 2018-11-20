@@ -12,6 +12,11 @@
  
 ## Súmario
 
+- [Proposta](#proposta)
+- [Casos de uso](#casos-de-uso)
+- [Modelagem](#modelagem)
+- [Manual](#manual)
+
 ### Proposta
 
 #### DESCRIÇÂO
@@ -30,12 +35,12 @@ A nossa proposta é criar um Software Web com frases que proporcione motivação
 
 #### LINK PARA OS REQUISITOS  
 
-[Requisitos funcionais e não funcionais]: (https://github.com/cp2-dc-info-projeto-final-2018/requisitos-jambd/blob/master/REQUISITOS.md)
+[Requisitos funcionais e não funcionais](https://github.com/cp2-dc-info-projeto-final-2018/requisitos-jambd/blob/master/REQUISITOS.md)
 
 ### Casos de uso 
 
-[Diagrama de Casos de Uso]: (xampp/diagramacasosdeuso.png)
-[Descrição Casos de Uso]: (https://github.com/cp2-dc-info-projeto-final-2018/requisitos-jambd/blob/master/casosdeuso.md )
+[Diagrama de Casos de Uso](xampp/diagramacasosdeuso.png)
+[Descrição Casos de Uso](https://github.com/cp2-dc-info-projeto-final-2018/requisitos-jambd/blob/master/casosdeuso.md )
 
 ### Modelagem 
 
