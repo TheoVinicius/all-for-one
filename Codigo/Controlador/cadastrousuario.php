@@ -159,6 +159,9 @@ else
  $insert -> execute();
 
  session_start();
+ $_SESSION['emailUsuarioLogado'] = $Email;
+unset($_SESSION['emailAdmLogado']);
  header('location: ../paginahome.php');
+
 }
 ?>

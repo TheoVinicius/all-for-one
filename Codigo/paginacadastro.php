@@ -188,6 +188,7 @@ else
  		<input class="botao" type="submit" value="Cadastrar"/>
 		<br>
 		<p class= "loguese"> Já possui uma conta? <a href='paginalogin.php' id='linklogin'> Login </a> </p>
+		<p class= "loguese"><a href='paginahome.php' id='paginahome'> Pagina Home </a> </p>
  </div>
 </div>
 </body>

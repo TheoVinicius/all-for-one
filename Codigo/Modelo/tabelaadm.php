@@ -1,5 +1,4 @@
 <?php
-
 function BuscaAdmPorId($username)
 {
 	$bd = ConexaoBD();

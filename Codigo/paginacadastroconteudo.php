@@ -20,12 +20,22 @@ if (array_key_exists('emailUsuarioLogado', $_SESSION) == true)
 
 if (array_key_exists('erroCarregamento', $_SESSION))
 {
-$erros = $_SESSION['erroCarregamento'];
+$errocarregamento = $_SESSION['erroCarregamento'];
 unset($_SESSION['erroCarregamento']);
 }
 else
 {
-	$erros = null;
+	$errocarregamento = null;
+}
+
+if (array_key_exists('errocategoria', $_SESSION))
+{
+$errocategoria = $_SESSION['errocategoria'];
+unset($_SESSION['errocategoria']);
+}
+else
+{
+	$errocategoria = null;
 }
 
 $data = new DateTime();
@@ -148,7 +158,8 @@ $data = new DateTime();
 		<img id="logo_menufixo" src="../logo/logo_allforone.png">
     <ul class="listamenu">
           <li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
-					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li>
+					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li>|
+					<li><a href="paginacadastroadm.php">NOVO ADM</a></li>
     </ul>
 		<a class="botao" href="Controlador/sairadm.php">Sair</a>
 	</div>
@@ -156,13 +167,13 @@ $data = new DateTime();
   <div id="corpo">
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
-
-	<?php if ($erros != null) { ?>
+<h2>Carregamento de Arquivos</h2>
+	<?php if ($errocarregamento != null) { ?>
 		<div id='erromensagem'>
 				<p>Erro:
-					<?php foreach($erros as $erro)
+					<?php foreach($errocarregamento as $erroc)
 						{
-						echo $erro;
+						echo $erroc;
 						} ?>
 				</p>
 		</div>
@@ -185,8 +196,21 @@ $data = new DateTime();
 
 <br><br><br><br><br>
 
+<h2>Salvamento de Categoria</h2>
+
+<?php if ($errocategoria!= null) { ?>
+	<div id='erromensagem'>
+			<p>Erro:
+				<?php foreach($errocategoria as $erro)
+					{
+					echo $erro;
+					} ?>
+			</p>
+	</div>
+
+<?php } ?>
 <div id="formulario">
-	<form method="POST">
+	<form method="POST" action="Controlador/salvacategoria.php" enctype="multipart/form-data">
      <label>Categoria: <input class="input" name="categoria" type="text" required/></label> <br/> <br>
 		 	<input type="submit" value="Enviar">
 	</form>

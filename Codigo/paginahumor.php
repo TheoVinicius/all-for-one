@@ -6,7 +6,7 @@ session_start();
 
 if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 {
-	$_SESSION['erroLogin'] = "Identifique-se para acessar o perfil";
+	$_SESSION['erroLogin'] = "Identifique-se para acessar o humor";
 	header('location: paginalogin.php');
 	exit();
 }

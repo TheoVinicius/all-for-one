@@ -1,5 +1,5 @@
 CREATE TABLE  adm(
-id_adm int auto_increment,
+id_adm int auto_increment not null,
 username VARCHAR(100) not null,
 senha VARCHAR(100) not null,
 primary key(id_adm)
@@ -16,7 +16,7 @@ amigo VARCHAR (35),
 datNasc DATE,
 sexo INT,
 primary key(id_usuario)
- );
+);
 
 CREATE TABLE humor
 (
@@ -39,9 +39,9 @@ CREATE TABLE categoria
 
 CREATE TABLE postagem
 (
-	id_postagem int auto_increment,
+	id_postagem int auto_increment not null,
 	data_postagem date not null,
-	id_adm int not null,
+	id_adm int not null unique,
   id_categoria int not null,
   arquivo_postagem varchar(100),
 	primary key(id_postagem),
@@ -68,18 +68,3 @@ CREATE TABLE diario
 	primary key(id_diario),
 	foreign key (id_usuario) references usuario(id_usuario)
 );
-
-
-/*ALTER TABLE diario
-DROP registrodiario;
-
-ALTER TABLE diario
-ADD registrodiario varchar(3000);
-
-ALTER TABLE humor
-ADD id_usuario int not null;
-
-ALTER TABLE humor
-ADD CONSTRAINT FK_USUARIOHUMOR
-FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario);
-*/

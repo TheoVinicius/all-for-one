@@ -1,6 +1,6 @@
 <?php
 
-function BuscaIdCategoria($username)
+function BuscaIdCategoria($categoria)
 {
 	$bd = ConexaoBD();
 

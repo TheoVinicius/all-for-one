@@ -1,5 +1,6 @@
 <?php
 
+require_once('../Modelo/conexaobd.php');
 require_once('../Modelo/tabelacategoria.php');
 require_once('../Modelo/tabelaadm.php');
 
@@ -22,19 +23,20 @@ $request = array_map('trim', $_REQUEST);
 $request = filter_var_array(
 							$request,
 							[ 'data_postagem' => FILTER_DEFAULT,
-                'categoria' => FILTER_DEFAULT  ]
+                'categoria' => FILTER_DEFAULT,
+                'tipoarquivo' => FILTER_VALIDATE_INT ]
               );
 
 $data_postagem = $request['data_postagem'];
 if ($data_postagem == false)
 {
-	$erro[] = "Data da Postagem nao foi informado ou é invalido"
+	$erro[] = "Data da Postagem nao foi informado ou é invalido";
 }
 
 $categoria = $request['categoria'];
 if ($categoria == false)
 {
-	$erro[] = "Categoria nao foi informado ou é invalido"
+	$erro[] = "Categoria nao foi informado ou é invalido";
 }
 else
 {
@@ -50,7 +52,6 @@ else if ($erro == null)
 	$arquivo_postagem = $_FILES['arquivo_postagem'];
 
   $pasta= "../Carregamentos/$categoria/" ;
-  mkdir("../$pasta");
 
   $nomeOrig = basename($arquivo_postagem['name']);
 
@@ -71,15 +72,14 @@ if ($erro == null)
    $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   $insert = $bd->prepare(
-    'INSERT INTO postagem (id_adm, data_postagem, id_categoria, arquivo_postagem)
-     VALUES (:id_adm, :data_postagem, :id_categoria, arquivo_postagem)'
+    'INSERT INTO postagem (data_postagem, id_adm, id_categoria, arquivo_postagem)
+     VALUES (:data_postagem, :id_adm, :id_categoria, :arquivo_postagem)'
   );
 
-  $insert->bindValue(':id_adm', $id_adm);
   $insert->bindValue(':data_postagem', $data_postagem);
+  $insert->bindValue(':id_adm', $id_adm);
   $insert->bindValue(':id_categoria', $id_categoria);
   $insert->bindValue(':arquivo_postagem', "$pasta/$nomeOrig");
-
 
   $insert -> execute();
 

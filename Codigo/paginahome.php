@@ -133,12 +133,22 @@ session_start();
 					<li><img id="img_menufixo" src="../menu fixo/perfil.png"><a href="paginaperfil.php">PERFIL</a></li>
           	<?php } ?>
           <?php
-            if(array_key_exists('emailAdmLogado', $_SESSION) == true)	{
-          ?>
-					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li>
+            if(array_key_exists('emailAdmLogado', $_SESSION) == true)	{    ?>
+					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li> |
+          <li><a href="paginacadastroadm.php">NOVO ADM</a></li>
 				<?php } ?>
+
     </ul>
+
+  <?php  if(array_key_exists('emailUsuarioLogado', $_SESSION) == true || array_key_exists('emailAdmLogado', $_SESSION) == true) { ?>
 		<a class="botao" href="Controlador/sair.php">Sair</a>
+  <?php }
+    else if (array_key_exists('emailUsuarioLogado', $_SESSION) == false || array_key_exists('emailAdmLogado', $_SESSION) == false ){
+   ?>
+   <a class="botao" href="paginalogin.php">Login</a>
+   <a class="botao" href="paginacadastro.php">Cadastro</a>
+   <?php } ?>
+
 	</div>
 
   <div id="corpo">

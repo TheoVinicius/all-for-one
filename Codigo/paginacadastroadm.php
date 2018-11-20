@@ -1,5 +1,19 @@
 <?php
 session_start();
+
+if (array_key_exists('emailAdmLogado', $_SESSION) == false)
+{
+	$_SESSION['erroLogin'] = "Identifique-se para acessar a administração";
+	header('location: paginaloginadm.php');
+	exit();
+}
+
+if (array_key_exists('emailUsuarioLogado', $_SESSION) == true)
+{
+	header('location: paginahome.php');
+	exit();
+}
+
 if (array_key_exists('errocadastro', $_SESSION))
 {
 $erros = $_SESSION['errocadastro'];
@@ -177,7 +191,9 @@ else
 
  		<input class="botao" type="submit" value="Cadastrar"/>
 		<br>
-		<p class= "loguese"> Já possui uma conta? <a href='paginalogin.php' id='linklogin'> Login </a> </p>
+		<p class= "loguese"> Já possui uma conta? <a href='paginaloginadm.php' id='linklogin'> Login </a> </p>
+		<p class= "loguese">  <a href='paginahome.php' id='linklogin'>Página HOME</a> </p>
+
  </div>
 </div>
 </body>
