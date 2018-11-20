@@ -114,6 +114,17 @@
 	color: blue;
 }
 
+.paginahome {
+	font-size: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#linkhome {
+	color: blue;
+}
+
 #erromensagem {
 	border: 1px solid;
 	background-color: #ffef8a;
@@ -165,6 +176,7 @@
 				<br>
 				<p class= "cadastrese"> Ainda não possui uma conta? <a href='paginacadastro.php' id='linkcadastrese'> Cadastre-se </a> </p>
 				<p class= "cadastrese"><a href='paginaloginadm.php' id='linkcadastrese'> Administrador </a> </p>
+				<p class= "cadastrese"><a href='paginahome.php' id='paginahome'> Pagina Home </a> </p>
 		</form>
 
   </div>

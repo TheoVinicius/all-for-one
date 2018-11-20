@@ -61,7 +61,7 @@ else
   $senhadobanco = BuscaSenhaPorEmail($email);
   if (password_verify($senhaantiga, $senhadobanco['senha']) == false )
   {
-     $erros[] = "A senha está incorreta";
+     $erros[] = "A senha antiga está incorreta";
   }
 }
 
@@ -161,7 +161,7 @@ else
 
  $insert = $bd->prepare(
    'UPDATE usuario
-    SET nomePróprio = :nomeProprio, sobrenome = :sobrenome, senha = :senha, datNasc = :datNasc, sexo= :sexo, amigo = :amigo
+    SET nomePróprio = :nomeProprio, sobrenome = :sobrenome, senha = :senha, senhaantiga = :senhaantiga, datNasc = :datNasc, sexo= :sexo, amigo = :amigo
     WHERE email = :email'
  );
 
@@ -179,6 +179,6 @@ else
  header('location: ../paginaperfil.php');
 }
 
-}
+
 
 ?>

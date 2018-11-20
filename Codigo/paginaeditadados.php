@@ -49,7 +49,7 @@ else
 }
 
 #corpo {
-	margin-top: 60px;
+
 	margin-left: auto;
 	margin-right: auto;
   background-color: #ffffff57;
@@ -135,22 +135,58 @@ else
 
 
 </style>
+
 <head>
-  <title>EDIÇÃO</title>
+  <title>Edição</title>
   <meta charset = "utf-8">
+
+	<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous">
+
+	</script>
+
 	<link rel="shortcut icon" href="../logo/favicon.ico" />
 </head>
+
+<body>
+
+	<div id = "menufixo">
+		<img id="logo_menufixo" src="../logo/logo_allforone.png">
+    <ul class="listamenu">
+          <li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
+          <?php
+            if(array_key_exists('emailAdmLogado', $_SESSION) == false)	{
+          ?>
+          <li><img id="img_menufixo" src="../menu fixo/humor.png"><a href="paginahumor.php">HUMOR </a></li>|
+          <li><img id="img_menufixo" src="../menu fixo/diario.png"><a href="paginadiario.php">DIÁRIO </a></li>|
+					<li><img id="img_menufixo" src="../menu fixo/perfil.png"><a href="paginaperfil.php">PERFIL</a></li>
+          	<?php } ?>
+          <?php
+            if(array_key_exists('emailAdmLogado', $_SESSION) == true)	{
+          ?>
+					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li>
+				<?php } ?>
+    </ul>
+		<a class="botao" href="Controlador/sair.php">Sair</a>
+	</div>
+
+  <div id="corpo">
+
+  <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
+
+
+	</div>
+
+
+</style>
+
 
 
 <body>
 
   <div id="corpo">
-
-
-		<div id="divtítulo">
-			<img src="../logo/logo_allforone.png" align= "center" id="logo">
-
-		</div>
 
     <?php if ($erros != null) { ?>
       <div id='erromensagem'>
@@ -167,16 +203,18 @@ else
 
 	<div id="formulario">
 	<form method="POST" action="Controlador/editadados.php">
-    <label>Senha Antiga: <input class="input" minlength="6" maxlength="12" name="senhaantiga" type="password" required/></label>
+
+
    	<label>Nome: <input class="input" minlength="3" maxlength="35" name="nomePróprio" type="text" required  value = "<?= $nomePróprio ?>"/></label>
    	<label>Sobrenome: <input class="input" minlength="3" maxlength="35" name="sobrenome" type="text" required value = "<?= $sobrenome?>"/></label> <br/> <br>
-   	<label>Senha: <input class="input" minlength="6" maxlength="12" name="senha" type="password" required/></label>
+    <label>Senha Antiga: <input class="input" minlength="6" maxlength="12" name="senhaantiga" type="password" required/></label> <br><br>
+   	<label>Nova Senha: <input class="input" minlength="6" maxlength="12" name="senha" type="password" required/></label>
    	<label>Confirmar senha:<input class="input" minlength="6" maxlength="12" name="confirmaSenha" type="password" required /></label> <br/> <br>
    	<label>Data de nascimento: <input class="input" name="dataNasc" type="date" required value = "<?=$dataNasc?>"/></label> <br/> <br>
 	 	<label>Sexo:  <select name="sexo">
        <option value="" disabled>Selecione</option>
        <option value="1">Feminino</option>
-       <option value="2">Masculino</option>
+       <option value="2">Masculino</option
        <option value="3">Outro</option>
      </select><br><br>
 	 	<label>Informe o nome de um amigo: <input class="input" minlength="3" maxlength="35" name="amigo" type="text" required/> <br/></label> <br><br>
