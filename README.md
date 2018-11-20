@@ -39,12 +39,12 @@ A nossa proposta é criar um Software Web com frases que proporcione motivação
 
 ### Casos de uso 
 
-[Diagrama de Casos de Uso](xampp/diagramacasosdeuso.png)
+[Diagrama de Casos de Uso](diagramacasosdeuso.png)
 [Descrição Casos de Uso](https://github.com/cp2-dc-info-projeto-final-2018/requisitos-jambd/blob/master/casosdeuso.md )
 
 ### Modelagem 
 
-[Diagrama de classes]: ( )
-[Banco de dados]: ( )
+[Diagrama de classes]( )
+[Banco de dados]( )
 
 ### Manual 
