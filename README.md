@@ -45,7 +45,7 @@ A nossa proposta é criar um Software Web com frases que proporcione motivação
 
 ### Modelagem
 
-[Diagrama de classes](diagramadeclasses.png)
+![Diagrama de classes](diagramadeclasses.png)
 [Banco de dados](https://github.com/cp2-dc-info-projeto-final-2018/requisitos-jambd/blob/master/Codigo/Modelo/criarbanco.sql)
 
 ### Manual
