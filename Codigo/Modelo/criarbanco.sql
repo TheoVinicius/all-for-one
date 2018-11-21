@@ -12,7 +12,6 @@ senha VARCHAR (60),
 nomePróprio VARCHAR(35),
 sobrenome VARCHAR(35),
 email VARCHAR(255) not null unique,
-amigo VARCHAR (35),
 datNasc DATE,
 sexo INT,
 primary key(id_usuario)
@@ -41,23 +40,13 @@ CREATE TABLE postagem
 (
 	id_postagem int auto_increment not null,
 	data_postagem date not null,
-	id_adm int not null unique,
+	id_adm nt not null unique,
   id_categoria int not null,
   arquivo_postagem varchar(100),
 	primary key(id_postagem),
 	foreign key (id_adm) references adm(id_adm),
   foreign key (id_categoria) references categoria(id_categoria)
 );
-
-CREATE TABLE usuario_postagem
-(
-	id_usuario int not null,
-	id_postagem int not null,
-	primary key(id_usuario, id_postagem),
-	foreign key (id_usuario) references usuario(id_usuario),
-	foreign key(id_postagem) references postagem(id_postagem)
-);
-
 
 CREATE TABLE diario
 (

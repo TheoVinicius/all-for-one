@@ -183,8 +183,7 @@ else
        <option value="2">Masculino</option>
        <option value="3">Outro</option>
      </select><br><br>
-	 	<label>Informe o nome de um amigo: <input class="input" minlength="3" maxlength="35" name="amigo" type="text" required/> <br/></label> <br><br>
-
+	
  		<input class="botao" type="submit" value="Cadastrar"/>
 		<br>
 		<p class= "loguese"> Já possui uma conta? <a href='paginalogin.php' id='linklogin'> Login </a> </p>

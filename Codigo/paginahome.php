@@ -102,19 +102,29 @@ session_start();
 	margin-left: 50px;
 }
 
+.img_fofa {
+  height: 150px;
+  margin: 5px;
+}
 
+.divhome {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+
+}
+
+h1 {
+  text-align: center;
+}
 </style>
 
 <head>
   <title>Home</title>
   <meta charset = "utf-8">
-
-	<script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous">
-
-	</script>
 
 	<link rel="shortcut icon" href="../logo/favicon.ico" />
 </head>
@@ -154,9 +164,27 @@ session_start();
   <div id="corpo">
 
   <div id="divtítulo"> <img id = "logo" src="../logo/logo_allforone.png" > </div>
-
-
+<div class="divhome">
+  <img id="frase_diaria" src="../Carregamentos/feliz/no_fim_tudo_da_certo.jpg">
 	</div>
+
+<div class="divhome">
+  <h1>Que tal assistir um vídeo?<h1>
+    <video height="300" controls>
+      <source src="../Carregamentos/videos/Cópia de Mude - Vídeo Motivacional.mp4" type="video/mp4">
+    </video>
+	</div>
+
+    <div class="divhome">
+  <h1>Melhore seu dia vendo algumas imagens</h1>
+    <img class="img_fofa" src="../Carregamentos/imagens_fofas/1.jpg">
+    <img class="img_fofa" src="../Carregamentos/imagens_fofas/2.jpg">
+    <img class="img_fofa" src="../Carregamentos/imagens_fofas/3.jpg">
+    <img class="img_fofa" src="../Carregamentos/imagens_fofas/4.jpg">
+    <img class="img_fofa" src="../Carregamentos/imagens_fofas/5.jpg">
+	</div>
+
+</div>
 
 </body>
 </html>

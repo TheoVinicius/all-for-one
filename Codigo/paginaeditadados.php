@@ -133,17 +133,14 @@ else
 	margin-left: 50px;
 }
 
-
+ h1 {
+   text-align: center;
+ }
 </style>
 
 <head>
   <title>Edição</title>
   <meta charset = "utf-8">
-
-	<script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous">
 
 	</script>
 
@@ -199,7 +196,7 @@ else
       </div>
     <?php } ?>
 
-
+<h1>Alterar Dados</h1>
 
 	<div id="formulario">
 	<form method="POST" action="Controlador/editadados.php">
@@ -217,7 +214,6 @@ else
        <option value="2">Masculino</option
        <option value="3">Outro</option>
      </select><br><br>
-	 	<label>Informe o nome de um amigo: <input class="input" minlength="3" maxlength="35" name="amigo" type="text" required/> <br/></label> <br><br>
 
  		<input class="botao" type="submit" value="Alterar"/>
 		<br>

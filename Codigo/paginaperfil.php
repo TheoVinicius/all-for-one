@@ -220,7 +220,6 @@ h2 {
 									}
 								 ?><br><br>
 	  <strong>EMAIL:</strong> &nbsp; <?= $dados['email'] ?><br><br>
-	  <strong>AMIGO:</strong>&nbsp; <?= $dados['amigo'] ?><br><br>
 
 				<p><a class='botao_alterar' href="paginaeditadados.php">Alterar</a></p>
 	</div>

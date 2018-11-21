@@ -28,6 +28,56 @@ else
 <html>
 <style>
 
+#menufixo {
+	width: auto;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	height: 60px;
+	background-color: white;
+	z-index: 99;
+  bottom: 0;
+	border-bottom: 1px solid #e4e6e8;
+}
+
+.listamenu {
+	padding-top: 20px;
+	list-style:none;
+	margin: 0px;
+	margin-left: 20%;
+	float: left;
+}
+
+.listamenu li {
+	display: inline;
+}
+
+.listamenu li a {
+	padding: 2px 20px;
+  display: inline-block;
+	color: black;
+	text-decoration:none;
+}
+
+.listamenu li a:hover{
+	color:#black;
+	border-bottom: 2px solid #f8e8a2;
+}
+
+#img_menufixo {
+	width: 17px;
+	margin-left: 5px;
+}
+
+#logo_menufixo {
+	width: 50px;
+	height: 50px;
+	padding: 5px;
+  float: left;
+	margin-left: 50px;
+}
+
 #input-email {
 	width: 300px;
 }
@@ -56,7 +106,7 @@ else
 #corpo {
 
 
-   margin: auto;
+  margin: auto;
   width: 400px;
   padding-top: 10px;
 	padding-bottom: 15px;
@@ -81,7 +131,7 @@ else
   width: 700px;
   background: #fff;
   border: 400px;
-  margin-top: 30px;
+  margin-top: 100px;
   padding-top: 10px;
 	border-radius: 10px;
 	border: 1px solid black;
@@ -161,6 +211,15 @@ else
 
 
 <body>
+	<div id = "menufixo">
+		<img id="logo_menufixo" src="../logo/logo_allforone.png">
+    <ul class="listamenu">
+          <li><img id="img_menufixo" src="../menu fixo/home.png"><a href="paginahome.php">HOME </a></li>|
+					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li>|
+					<li><a href="paginacadastroadm.php">NOVO ADM</a></li>
+    </ul>
+		<a class="botao" href="Controlador/sair.php">Sair</a>
+	</div>
 
   <div id="corpo">
 
@@ -192,7 +251,6 @@ else
  		<input class="botao" type="submit" value="Cadastrar"/>
 		<br>
 		<p class= "loguese"> Já possui uma conta? <a href='paginaloginadm.php' id='linklogin'> Login </a> </p>
-		<p class= "loguese">  <a href='paginahome.php' id='linklogin'>Página HOME</a> </p>
 
  </div>
 </div>

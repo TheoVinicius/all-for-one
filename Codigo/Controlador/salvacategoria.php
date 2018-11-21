@@ -48,6 +48,9 @@ if ($erros != null)
 }
 else
 {
+	$pasta = "../../Carregamentos/$categoria";
+  mkdir($pasta);
+
  $bd = new PDO('mysql:host=localhost;dbname=tcc-jambd;charset=utf8', 'tcc-jambd', 'jambdtcc');
 
   $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -58,7 +61,6 @@ else
  );
 
  $insert->bindValue(':categoria', $categoria);
-
 
  $insert -> execute();
 

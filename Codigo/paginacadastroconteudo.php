@@ -161,7 +161,7 @@ $data = new DateTime();
 					<li><a href="paginacadastroconteudo.php">CADASTRO DE CONTEÚDO</a></li>|
 					<li><a href="paginacadastroadm.php">NOVO ADM</a></li>
     </ul>
-		<a class="botao" href="Controlador/sairadm.php">Sair</a>
+		<a class="botao" href="Controlador/sair.php">Sair</a>
 	</div>
 
   <div id="corpo">

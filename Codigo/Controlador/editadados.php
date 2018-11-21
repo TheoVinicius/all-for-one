@@ -6,7 +6,7 @@ session_start();
 
 if (array_key_exists('emailUsuarioLogado', $_SESSION) == false)
 {
-	$_SESSION['erroLogin'] = "Identifique-se para acessar o perfil";
+	$_SESSION['erroLogin'] = "Identifique-se para acessar a edição de dados";
 	header('location: paginalogin.php');
 	exit();
 }
@@ -46,7 +46,6 @@ $request = array_map('trim', $_REQUEST);
 				'confirmaSenha' => FILTER_DEFAULT,
 				'dataNasc' => FILTER_DEFAULT,
 				'sexo' => FILTER_VALIDATE_INT,
-				'amigo' => FILTER_DEFAULT,
         'senhaantiga' => FILTER_DEFAULT
 			]
 );
@@ -136,16 +135,6 @@ if ($sexo =! 1 || $sexo =! 2 || $sexo =! 3)
 	$erros[]= "O campo sexo foi deixado em branco ou é inválido";
 }
 
-$amigo = $request['amigo'];
-
-if ($amigo == false)
-{
-	$erros[]= "O campo amigo foi deixado nome em branco ou é inválido";
-}
-else if (strlen($amigo) < 3 || 35 < strlen($amigo))
-{
-	$erros[]= "O nome do amigo deve ter de 3 a 35 caracteres";
-}
 
 if ($erros != null)
 {
@@ -161,7 +150,7 @@ else
 
  $insert = $bd->prepare(
    'UPDATE usuario
-    SET nomePróprio = :nomeProprio, sobrenome = :sobrenome, senha = :senha, senhaantiga = :senhaantiga, datNasc = :datNasc, sexo= :sexo, amigo = :amigo
+    SET nomePróprio = :nomeProprio, sobrenome = :sobrenome, senha = :senha, senhaantiga = :senhaantiga, datNasc = :datNasc, sexo= :sexo,
     WHERE email = :email'
  );
 
@@ -171,7 +160,6 @@ else
  $insert->bindValue(':email', $email);
  $insert->bindValue(':datNasc', $request['dataNasc']);
  $insert->bindValue(':sexo', $request['sexo']);
- $insert->bindValue(':amigo', $request['amigo']);
 
  $insert -> execute();
 
